@@ -8,7 +8,7 @@ own server. There is no backend to run.
 
 ```bash
 npm ci
-npm run build          # dist/ — about 110 MB, most of it models and textures
+npm run build          # dist/ is about 110 MB, mostly models and textures
 npm run preview        # check it at http://localhost:4173 before uploading
 ```
 
@@ -70,4 +70,4 @@ are fine.
 
 ---
 
-<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>
+<sub>Somewhere, For You created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

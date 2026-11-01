@@ -2,11 +2,11 @@
 
 <p align="center"><img src="docs/media/scenes/lantern.webp" alt="Sky lanterns rising from a dark meadow at night" width="560" /></p>
 
-All notable changes to this project are listed here. The format follows
-[Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow
+I list the important changes here. I follow
+[Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and
 [Semantic Versioning](https://semver.org/).
 
-## [1.0.0] — first public release
+## [1.0.0] First public release
 
 ### The world
 - Indian traditions by default: gulmohar trees, diyas, rangoli, marigold
@@ -45,4 +45,4 @@ All notable changes to this project are listed here. The format follows
 
 ---
 
-<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>
+<sub>Somewhere, For You created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

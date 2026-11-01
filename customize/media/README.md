@@ -12,4 +12,4 @@ them, so only include what you are happy to share with the people you send it to
 
 ---
 
-<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>
+<sub>Somewhere, For You created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

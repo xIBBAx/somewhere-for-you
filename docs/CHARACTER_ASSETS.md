@@ -16,7 +16,7 @@ There are three different things people mean by "my own character":
    turned into 3D.
 2. **Your own rigged 3D model.** A `.glb` that follows the rules below. This
    page is about this.
-3. **A 3D likeness made from photos.** Not part of this project. If you make
+3. **A 3D likeness made from photos.** I didn't build this. If you make
    one elsewhere (by hand in Blender, or with a 3D service under its own terms)
    and rig it as below, you can use it as (2).
 
@@ -108,4 +108,4 @@ must not be committed to a public repository. See
 
 ---
 
-<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>
+<sub>Somewhere, For You created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

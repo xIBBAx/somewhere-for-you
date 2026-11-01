@@ -19,4 +19,4 @@ Every field is explained in [docs/CUSTOMIZATION.md](../docs/CUSTOMIZATION.md).
 
 ---
 
-<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>
+<sub>Somewhere, For You created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

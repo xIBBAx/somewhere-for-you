@@ -1,26 +1,23 @@
 <h1 align="center">Somewhere, For You</h1>
 
 <p align="center">
-An explorable 3D world in the browser, rooted in Indian traditions, that you can make for someone:<br/>
-their name on the letter that opens it, your memories at nine places around home,<br/>
-and a sky full of stars to ride out into.
+A 3D world that runs in your browser. Walk around it, ride horses, fly past the clouds and go all the way to the Moon.<br/>
+Then change the names, the letter and the photos, and give it to someone.
 </p>
 
-<p align="center"><strong>Created by Ibrahim Sultan</strong></p>
+<p align="center"><strong>Somewhere, For You created by Ibrahim Sultan.</strong></p>
 
 <p align="center">
 <a href="docs/media/somewhere-for-you-trailer-720p.mp4"><img src="docs/media/poster.jpg" alt="Somewhere, For You: the trailer. The explorer at home at night, a rangoli ringed with lit diyas under a starry sky." width="880" /></a><br/>
-<a href="docs/media/somewhere-for-you-trailer-720p.mp4"><strong>▶ Download the trailer</strong></a> (MP4, 27 MB: real gameplay, captured from the running game)
+<a href="docs/media/somewhere-for-you-trailer-720p.mp4"><strong>▶ Download the trailer</strong></a> (MP4, 27 MB. This is real gameplay from the game.)
 </p>
 
-It is two things at once:
+You can use this in two ways:
 
-- **A game you can play right now.** Walk, ride, fly and sail through an endless landscape, from meadows and lakes to a mountain valley, the Moon and the planets. It works out of the box with a complete demo world.
-- **A starting point for a gift.** Give it to a partner, a friend, a parent or a sibling: change the names, write the letter, put your photos at the memory places, pick or import the characters and choose the music. You can do it in the browser without code, or in a config file if you build it yourself.
+- **Just play it.** Walk, ride and fly through the world, from the meadows and lakes to the mountain valley, the Moon and the planets. The demo world works as soon as you run it.
+- **Make it for someone.** A partner, a friend, a parent, a sibling, anyone. Change the names, write your own letter, put your photos at the memory places, and pick the characters and the music. You can do all of it in the browser without touching code, or in a config file if you want to build your own copy.
 
-> **Status:** playable from start to finish on a desktop browser, and still a work in progress. It is
-> tested in Chromium. Phones and tablets are not supported. See [Project status](#project-status)
-> for what works, what is experimental and what is next.
+> **Status:** You can play it from start to finish on a desktop browser, but I'm still working on it. I've only tested it in Chromium, and phones and tablets don't work. See [Project status](#project-status) for what works and what doesn't yet.
 
 ## Contents
 
@@ -47,7 +44,7 @@ It is two things at once:
 | <img src="docs/media/scenes/snow.webp" alt="Snow on the home meadow with flame-red gulmohar trees" width="420" /><br/><sub>Weather changes: here, snow on the meadow</sub> | <img src="docs/media/scenes/warp.webp" alt="A winged horse in a star corridor bursting out beside the Moon" width="420" /><br/><sub>The star corridor opening onto the Moon</sub> |
 | <img src="docs/media/scenes/earth.webp" alt="Earth seen from orbit with swirling clouds" width="420" /><br/><sub>Earth from orbit</sub> | <img src="docs/media/scenes/saturn.webp" alt="Saturn and its rings against the Milky Way" width="420" /><br/><sub>Saturn's rings</sub> |
 
-- **Rooted in India.** Flame-red gulmohar trees, clay diyas that light up along the path at dusk and go out in the rain, rangoli at the thresholds, marigold torans on the gateways, patang kites on dry days, peacocks that fan their trains when you come close, a chai stall, a mela, and the first rain of the monsoon. The demo's people, animals and memory places have Indian names, home on the globe is the centre of India, a Himalayan valley waits to the north, and the Moon has the Chandrayaan landing sites. The occasion can be Diwali, Holi, Eid, Christmas, Navratri, Onam, Pongal, Baisakhi, Raksha Bandhan or Gurpurab as well as a birthday or anniversary. All of it can be changed. Two things are not Indian yet: the default music is a CC0 lo-fi track (bring your own raga or bansuri piece in the Personalize screen), and the default characters wear modern clothes rather than traditional dress, because no suitably licensed rigged outfits were available.
+- **Indian by default.** Flame-red gulmohar trees, clay diyas that light up along the path at dusk and go out in the rain, rangoli at the doorways, marigold torans, patang kites on dry days, peacocks that fan out when you get close, a chai stall, a mela and the first rain of the monsoon. The people, animals and memory places in the demo have Indian names, home on the globe is the centre of India, there's a Himalayan valley to the north, and the Moon has the Chandrayaan landing sites. You can set the occasion to Diwali, Holi, Eid, Christmas, Navratri, Onam, Pongal, Baisakhi, Raksha Bandhan or Gurpurab, or a birthday or anniversary. You can change all of this. Two things aren't Indian yet: the music is a CC0 lo-fi track (you can add your own raga or bansuri piece in the Personalize screen), and the characters wear modern clothes, because I couldn't find rigged traditional outfits with a clear licence.
 - **An endless landscape** streamed around you as you go: forests, meadows, lakes and rivers, and a high Himalayan-style valley with a village. Weather changes from sun to showers, storms, mist and snow, and a real star catalogue fills the night sky.
 - **Two people and a cat.** You play as the explorer, with a cat who follows, plays and finds things. After the last memory the companion joins you: hold hands, hug, high-five, dance, or switch and play as them (Q).
 - **Animals** that live their own lives: 15 kinds of deer with fawns, foxes, rabbits, monkeys, big cats, ducks, birds, insects, frogs and fish.
@@ -128,27 +125,27 @@ All models are glTF binary (`.glb`). There is no backend, no account, no analyti
 
 | | Status |
 |---|---|
-| Chromium (desktop) | **Tested**: Chromium on Linux under WSLg on Windows, with an NVIDIA GTX 1660 Ti through D3D12 |
-| Chrome / Edge (desktop) | Same engine as the tested build; not separately tested for this release |
-| Firefox (desktop) | Not tested for this release |
-| Safari (macOS) | Not tested for this release |
-| Phones and tablets | **Not supported** (no touch controls) |
+| Chromium (desktop) | **This is what I test on:** Chromium on Linux under WSLg on Windows, with an NVIDIA GTX 1660 Ti |
+| Chrome / Edge (desktop) | Same engine, but I haven't tested them separately yet |
+| Firefox (desktop) | I haven't tested it yet |
+| Safari (macOS) | I haven't tested it yet |
+| Phones and tablets | **Doesn't work** (there are no touch controls) |
 
-It is a demanding 3D scene: a dedicated graphics card is recommended. Measured on the production build with a GTX 1660 Ti, Chromium under WSLg and auto quality, standing at home: about 32 fps at 1280×800 and about 27 fps at 1920×1080. If it runs slowly, choose **Balanced** or **Light** in the HUD's quality menu. A computer without a working graphics card falls back to software rendering, which is very slow; the game tells you when that happens. More in [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md#performance-and-troubleshooting).
+It's a heavy 3D scene, so you'll want a dedicated graphics card. On my GTX 1660 Ti, standing at home on auto quality in the production build, I get about 32 fps at 1280×800 and about 27 fps at 1920×1080. If it's slow for you, pick **Balanced** or **Light** in the quality menu. Without a working graphics card it falls back to software rendering, which is very slow, and the game will tell you when that happens. There's more in [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md#performance-and-troubleshooting).
 
 ## Project status
 
-It isn't perfect and it isn't finished. Here is where it honestly stands.
+It's not perfect and it's not finished. This is where it stands right now.
 
 | | |
 |---|---|
-| **Working, played and tested** | Walking, running and jumping · horses · the three winged horses and the dragon · the home region, the wider world and the mountain valley · weather, day and night · the journey to the Moon, the planets and back · the companion and shared moments · photo mode, journal, world map and fast travel · the Personalize screen, including photos, export, import and deleting everything |
-| **Experimental** | Your own rigged 3D character: the upload check is tested, but playing through the whole game with one has not been · live weather (optional, off by default) |
-| **Not tested yet** | Firefox, Safari, and native Windows Chrome or Edge (the same engine as the tested Chromium build) |
-| **Known rough edges** | Hand and foot placement on slopes and on saddles can be about 14 cm off · frame rate is demanding on mid-range graphics cards · water contact and animal behaviour have automated tests but deserve more real play · memory use over very long sessions has not been measured |
-| **Next** | Traditional clothing and a soundtrack rooted in Indian classical music, both of which need properly licensed assets · better foot placement · a lighter first load |
+| **Works, I've played and tested it** | Walking, running and jumping · horses · the three winged horses and the dragon · home, the wider world and the mountain valley · weather, day and night · the trip to the Moon, the planets and back · the companion and the things you do together · photo mode, journal, world map and fast travel · the Personalize screen, including photos, export, import and deleting everything |
+| **Experimental** | Your own rigged 3D character: the upload check is tested, but I haven't played the whole game with one yet · live weather (optional, off by default) |
+| **Not tested yet** | Firefox, Safari, and Chrome or Edge directly on Windows |
+| **Known problems** | Hand and foot placement on slopes and saddles can be about 14 cm off · it's heavy on mid-range graphics cards · water contact and animal behaviour have automated tests but need more real play · I haven't measured memory use over very long sessions |
+| **What I want to do next** | Traditional clothes and an Indian classical soundtrack, once I find properly licensed assets · better foot placement · a lighter first load |
 
-See the [open issues](https://github.com/xIBBAx/somewhere-for-you/issues). Contributions from developers, designers, 3D artists and animators are welcome, and so is simply cloning it and making it your own.
+The [open issues](https://github.com/xIBBAx/somewhere-for-you/issues) are a good place to start. If you're a developer, designer, 3D artist or animator and you want to help, I'd really like that. And if you just want to clone it and make it your own, that's great too.
 
 ## Documentation
 
@@ -164,18 +161,20 @@ See the [open issues](https://github.com/xIBBAx/somewhere-for-you/issues). Contr
 
 ## Contributing
 
-Bug reports, fixes and new ideas are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md); please also read the [Code of Conduct](CODE_OF_CONDUCT.md).
+Bug reports, fixes and new ideas are all welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md), and please read the [Code of Conduct](CODE_OF_CONDUCT.md) too.
 
 ## How this was made
 
-**Somewhere, For You was created by Ibrahim Sultan.** I came up with the idea and built it over many long iterations, directing, playing, testing and revising every part of it, using LLMs, coding agents, agent skills, plugins, MCP servers, browser automation and Blender tooling.
+**Somewhere, For You created by Ibrahim Sultan.**
 
-The models and agents involved include OpenAI Codex, Anthropic's Claude Sonnet and Claude Opus (Claude Opus 5.5 handled much of the later refinement and integration), Google's Gemini through Antigravity, GLM and DeepSeek. They wrote a great deal of the code. The decisions, the taste and the testing were mine, and the tests in this repository are the evidence that it works, not the tools that wrote it.
+This was my idea and I've been building it for a long time. I used LLMs, coding agents, skills, plugins, MCP servers, browser automation and Blender to do it. Codex, Claude Sonnet, Claude Opus, Gemini through Antigravity, GLM and DeepSeek all helped, and Claude Opus 5.5 did a lot of the later refinement and integration.
+
+AI wrote a lot of the code. I came up with the idea, decided what goes in, played it, tested it and kept going back until it felt right.
 
 ## License
 
-The code and the project's own models, textures and artwork are released under the [MIT License](LICENSE). Some bundled third-party assets have their own licences (most are CC0 or public domain; the planet textures are CC BY 4.0 and the star catalogue is CC BY-SA 4.0). They are listed with their required credits in [ASSET_LICENSES.md](ASSET_LICENSES.md).
+The code and my own models, textures and artwork are under the [MIT License](LICENSE). Some third-party assets have their own licences (most are CC0 or public domain, the planet textures are CC BY 4.0 and the star catalogue is CC BY-SA 4.0). They're all listed with their credits in [ASSET_LICENSES.md](ASSET_LICENSES.md).
 
 ---
 
-<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>
+<sub>Somewhere, For You created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

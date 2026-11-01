@@ -4,16 +4,16 @@
 
 ## Supported versions
 
-Security fixes are made on the `main` branch and in the latest release.
-Older releases are not updated.
+I fix security problems on the `main` branch and in the latest release. I don't
+update older releases.
 
 ## Reporting a vulnerability
 
 Please report security problems **privately**, not in a public issue:
 use GitHub's private vulnerability reporting for this repository
-(**Security → Report a vulnerability**). You can expect an acknowledgement
-within a week. If the report is confirmed, a fix is prepared privately and
-credited to you in the release notes unless you prefer otherwise.
+(**Security → Report a vulnerability**). I'll reply within a week. If it's a real
+problem, I'll fix it privately and credit you in the release notes unless you'd
+rather I didn't.
 
 Useful things to include: what an attacker could do, the steps or a small
 file that triggers it (a crafted `gift.json`, `.zip` or `.glb`, for example),
@@ -34,7 +34,7 @@ Out of scope: problems that need the attacker to already control the
 victim's browser or computer, denial of service by deliberately loading very
 large but valid worlds into your own browser, and issues in third-party hosts.
 
-## How the project keeps it safe
+## How I keep it safe
 
 - No backend, no accounts, no secrets in the client, no analytics.
 - Personal text is only ever inserted as text, never as HTML.
@@ -49,4 +49,4 @@ large but valid worlds into your own browser, and issues in third-party hosts.
 
 ---
 
-<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>
+<sub>Somewhere, For You created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

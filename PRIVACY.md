@@ -67,10 +67,10 @@ at up to 1600 pixels on the long side.
 ## Builders and hosts
 
 If you host a copy, your host may log requests (IP addresses, times, pages) as
-any web server does. The project adds nothing to that. The security headers
+any web server does. The game adds nothing to that. The security headers
 recommended in [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) also stop the page
 from sending a referrer to other sites.
 
 ---
 
-<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>
+<sub>Somewhere, For You created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

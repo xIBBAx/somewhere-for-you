@@ -5,8 +5,8 @@
 
 A single-page web app: React renders the interface and a React Three Fiber
 canvas, and almost everything that moves is plain TypeScript running in the
-render loop. There is no server. This page is a map: the header comment of
-each module explains the details (and often the physics) behind it.
+render loop. There's no server. Think of this page as a map. The header comment
+in each module explains the details, and often the physics, behind it.
 
 ```
 index.html ─ boot/letter.js (letter, before the bundle) ─ boot/progress.js (loader)
@@ -127,4 +127,4 @@ and nothing in the game uses text as HTML.
 
 ---
 
-<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>
+<sub>Somewhere, For You created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

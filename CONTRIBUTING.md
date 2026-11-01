@@ -3,9 +3,9 @@
 <p align="center"><img src="docs/media/scenes/dragon-ride.webp" alt="Two riders on a golden dragon flying over land" width="560" /></p>
 <p align="center"><img src="docs/media/scenes/whales.webp" alt="A winged horse flying alongside a pod of sky whales" width="560" /></p>
 
-Thank you for helping. This is a playable game and a template people use to
-make something personal, so changes are judged on both: does the world still
-play well, and is it still easy and safe to personalize?
+Thanks for helping. This is a game and also a template people use to make
+something personal, so when I review a change I look at two things: does the
+world still play well, and is it still easy and safe to personalize?
 
 ## Set up
 
@@ -41,7 +41,7 @@ pull request. Use the default demo world, never your own photos.
    for the player or the developer: "Let the cat follow you onto the bridge",
    not "fix bug". [Conventional Commits](https://www.conventionalcommits.org/)
    prefixes (`fix:`, `feat:`, `docs:`) are welcome but not required.
-5. A maintainer reviews, may ask for changes, and squash-merges.
+5. I'll review it, maybe ask for changes, and squash-merge it.
 
 ## Code conventions
 
@@ -65,7 +65,7 @@ Every model, texture, sound or font must be redistributable in a public
 repository:
 
 - Accepted: CC0, public domain, CC BY 4.0, CC BY-SA 4.0, or your own work
-  released under the project's MIT licence.
+  released under this repo's MIT licence.
 - Not accepted: non-commercial or no-derivatives licences, Mixamo or
   marketplace assets that forbid stand-alone redistribution, AI-generated
   assets whose terms are unclear, anything without a clear source, and photos
@@ -92,14 +92,13 @@ content. `.gitignore` covers the usual places; check `git status` anyway.
   screenshot of the debug line (`?debug`) helps.
 - **Features and gameplay ideas:** open an issue with the *Feature idea*
   form. Describe what the player would do and feel, not only the
-  implementation. Ideas that keep the world calm, grounded and personalizable
-  fit best.
+  implementation. Ideas that keep the world calm and easy to personalize fit best.
 - **Security problems:** see [SECURITY.md](SECURITY.md); don't open a public issue.
 
-By contributing you agree that your contribution is licensed under the
-project's [MIT License](LICENSE) (and, for assets, the licence you declare in
+By contributing you agree that your contribution is under this repo's
+[MIT License](LICENSE) (and, for assets, the licence you put in
 `ASSET_LICENSES.md`).
 
 ---
 
-<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>
+<sub>Somewhere, For You created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>
