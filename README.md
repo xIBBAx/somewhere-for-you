@@ -10,7 +10,7 @@ and a sky full of stars to ride out into.
 
 <p align="center">
 <a href="docs/media/somewhere-for-you-trailer-720p.mp4"><img src="docs/media/poster.jpg" alt="Somewhere, For You: the trailer. The explorer at home at night, a rangoli ringed with lit diyas under a starry sky." width="880" /></a><br/>
-<a href="docs/media/somewhere-for-you-trailer-720p.mp4"><strong>▶ Watch the trailer</strong></a> (real gameplay, captured from the running game)
+<a href="docs/media/somewhere-for-you-trailer-720p.mp4"><strong>▶ Download the trailer</strong></a> (MP4, 27 MB: real gameplay, captured from the running game)
 </p>
 
 It is two things at once:
