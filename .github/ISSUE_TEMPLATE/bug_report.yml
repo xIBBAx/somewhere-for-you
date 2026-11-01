@@ -1,0 +1,46 @@
+name: Bug report
+description: Something in the game or the Personalize screen doesn't work as it should.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please use the demo world or describe your setup in words: **never attach personal photos, letters or exported worlds.**
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start the world with ?skipIntro
+        2. Call the star-born Pegasus (I) and press Space to take off
+        3. …
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      placeholder: Chrome 141 on Windows 11
+    validations:
+      required: true
+  - type: input
+    id: gpu
+    attributes:
+      label: Graphics card (from the ?debug line or chrome://gpu)
+      placeholder: NVIDIA GeForce GTX 1660 Ti
+  - type: dropdown
+    id: quality
+    attributes:
+      label: Quality preset
+      options: [High, Balanced, Light, Auto, Not sure]
+  - type: textarea
+    id: console
+    attributes:
+      label: Console output
+      description: Errors from the browser's developer console (F12), if any.
+      render: text

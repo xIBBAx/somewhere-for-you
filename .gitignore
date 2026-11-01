@@ -1,0 +1,33 @@
+# dependencies and build output
+node_modules/
+dist/
+*.tsbuildinfo
+.vite/
+coverage/
+playwright-report/
+test-results/
+qa-artifacts/
+
+# your personalization stays on your machine (customize/README.md)
+customize/*
+!customize/README.md
+!customize/gift.example.json
+!customize/media/
+customize/media/*
+!customize/media/README.md
+*.world.zip
+
+# secrets and local settings
+.env
+.env.*
+!.env.example
+*.local
+*.pem
+*.key
+
+# editors and OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json

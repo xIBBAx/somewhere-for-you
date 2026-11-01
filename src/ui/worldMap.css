@@ -1,0 +1,150 @@
+/* The World map: the terrain sheet fills the screen; its tools float on it in
+   the navigator's own ink (pale on dark glass), kept to the edges so the
+   land stays in view. */
+.explorer-world { position: fixed; inset: 0; z-index: 38; pointer-events: auto; color: #f8f4e8; font: 12px var(--font-body); }
+.world-map { position: absolute; inset: 0; overflow: hidden; background: #1b2a2a; }
+.wm-sheet { position: absolute; inset: 0; touch-action: none; cursor: grab; }
+.wm-sheet:active { cursor: grabbing; }
+.wm-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; outline: none; }
+.wm-canvas:active { cursor: grabbing; }
+.wm-canvas:focus-visible { box-shadow: inset 0 0 0 2px #c6eee0; }
+.world-map button { color: inherit; font: inherit; cursor: pointer; background: transparent; border: 0; padding: 0; }
+.world-map button:focus-visible { outline: 2px solid #c6eee0; outline-offset: 2px; }
+.world-map button:disabled { opacity: .35; cursor: default; }
+.world-map svg { width: 16px; height: 16px; stroke-width: 1.7; flex-shrink: 0; }
+
+/* markers: a cased chip and a haloed name beside it */
+.wm-markers { position: absolute; inset: 0; pointer-events: none; }
+.wm-marker { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: 5px; pointer-events: auto; will-change: transform; text-shadow: 0 1px 2px #0b1a1d, 0 0 6px #0b1a1d, 0 0 2px #0b1a1d; }
+.wm-marker[hidden] { display: none; }
+.wm-icon { width: 24px; height: 24px; margin: -12px 0 0 -12px; display: grid; place-items: center; border-radius: 50%; background: #10282bd9; border: 1.5px solid #a9e2d6; color: #a9e2d6; box-shadow: 0 1px 4px #000a; }
+.wm-icon svg { width: 13px; height: 13px; }
+.wm-marker.found .wm-icon { border-color: #ffe2a0; color: #ffe2a0; }
+.wm-marker.g-home .wm-icon { background: #3a2b14e6; border-color: #ffe2a0; color: #ffe2a0; width: 28px; height: 28px; margin: -14px 0 0 -14px; }
+.wm-marker.g-find .wm-icon { width: 14px; height: 14px; margin: -7px 0 0 -7px; }
+.wm-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+.wm-marker.is-destination .wm-icon { background: #ffd36e; border-color: #0b1a1d; color: #0b1a1d; }
+/* her own marks: a rose cross, the one colour no other mark uses (markPlace.ts MARK_COLOUR) */
+.wm-marker.g-mark .wm-icon, .wm-row-icon.g-mark { border-color: #ff6f91; color: #ff6f91; background: #2a1219e0; }
+.wm-marker.g-mark .wm-icon svg, .wm-row-icon.g-mark svg { stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; fill: none; }
+.wm-marker.g-mark.is-destination .wm-icon, .wm-row-icon.g-mark.is-destination { background: #ff6f91; border-color: #0b1a1d; color: #1a0a10; }
+.wm-marker.g-unknown .wm-icon { width: 18px; height: 18px; margin: -9px 0 0 -9px; background: #10282bb0; border-style: dashed; }
+.wm-diamond { width: 6px; height: 6px; transform: rotate(45deg); border: 1.2px solid currentColor; }
+.wm-marker.flip.g-unknown .wm-icon { margin: -9px -9px 0 0; }
+.wm-marker.selected .wm-icon { box-shadow: 0 0 0 3px #fff3d8cc, 0 1px 6px #000; }
+.wm-label { margin-top: -12px; font-size: 12px; font-weight: 500; white-space: nowrap; color: #fff8ea; }
+.wm-label[hidden] { display: none; }
+.wm-marker:not(.found) .wm-label { color: #d3efe8; }
+
+/* you: above every marker, turned to your facing */
+.wm-you { position: absolute; left: 0; top: 0; width: 0; height: 0; pointer-events: none; z-index: 3; will-change: transform; }
+.wm-you svg { position: absolute; width: 26px; height: 30px; left: -13px; top: -15px; fill: #fbfaf0; stroke: #0b1a1d; stroke-width: 1.8; filter: drop-shadow(0 1px 3px #000c); }
+.wm-you.is-edge svg { opacity: .85; }
+.wm-you.is-mounted::before { content: ""; position: absolute; width: 34px; height: 34px; left: -17px; top: -17px; border-radius: 50%; border: 1.5px solid #fbfaf0bb; }
+.wm-marker.flip { flex-direction: row-reverse; }
+.wm-marker.flip .wm-icon { margin: -12px -12px 0 0; }
+.wm-marker.flip.g-home .wm-icon { margin: -14px -14px 0 0; }
+
+/* the top bar: title, the regions to jump to, places, close */
+.wm-top { position: absolute; top: 0; left: 0; right: 0; display: flex; align-items: center; gap: 10px; padding: max(12px, env(safe-area-inset-top)) max(14px, env(safe-area-inset-right)) 22px max(14px, env(safe-area-inset-left)); background: linear-gradient(#0a181bd0, #0a181b70 60%, transparent); pointer-events: none; }
+.wm-top > * { pointer-events: auto; }
+.wm-title { display: flex; align-items: center; gap: 7px; font: 500 15px var(--font-display, Georgia), serif; letter-spacing: .02em; white-space: nowrap; text-shadow: 0 1px 3px #000; }
+.wm-regions { display: flex; gap: 4px; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.wm-regions::-webkit-scrollbar { display: none; }
+.wm-regions button, .wm-places-toggle { min-height: 36px; padding: 0 12px; border-radius: 18px; background: #0b1f23b8; border: 1px solid #d8e8de38; backdrop-filter: blur(8px); white-space: nowrap; font-size: 12px; display: inline-flex; align-items: center; gap: 6px; }
+.wm-regions button.on, .wm-places-toggle.on { border-color: #fff0c4; color: #fff3d0; }
+.wm-close { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; background: #0b1f23b8; border: 1px solid #d8e8de38; backdrop-filter: blur(8px); }
+
+/* zoom and recentre, down the right edge */
+.wm-controls { position: absolute; right: max(14px, env(safe-area-inset-right)); top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 6px; }
+.wm-controls button { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: #0b1f23c8; border: 1px solid #d8e8de38; backdrop-filter: blur(8px); box-shadow: 0 2px 8px #0006; }
+.wm-controls button.on, .wm-controls button[aria-pressed="true"] { border-color: #fff0c4; color: #fff3d0; }
+
+/* scale and coordinates, bottom left */
+.wm-foot { position: absolute; left: max(14px, env(safe-area-inset-left)); bottom: max(12px, env(safe-area-inset-bottom)); display: flex; flex-direction: column; gap: 4px; font-size: 11px; font-variant-numeric: tabular-nums; text-shadow: 0 1px 2px #000, 0 0 6px #000; pointer-events: none; }
+.wm-scale { display: flex; align-items: flex-end; gap: 7px; }
+.wm-scale i { display: block; height: 6px; border: 1.5px solid #fff4dc; border-top: 0; box-shadow: 0 1px 2px #000; }
+.wm-coords { color: #e6efe6; }
+
+/* the card: what is selected, or where you are; and the places list */
+.wm-panel { position: absolute; left: max(14px, env(safe-area-inset-left)); top: 78px; width: min(330px, calc(100vw - 92px)); max-height: calc(100dvh - 160px); display: flex; flex-direction: column; pointer-events: none; }
+.wm-card { pointer-events: auto; padding: 12px 14px; border-radius: 14px; background: #0a1c20d9; border: 1px solid #d8e8de30; backdrop-filter: blur(10px); box-shadow: 0 8px 28px #0008; }
+.wm-card small { font-size: 10px; letter-spacing: .06em; color: #c5dfd5; }
+.wm-card strong { display: block; font: 500 17px var(--font-body); margin-top: 2px; line-height: 1.25; }
+.wm-card-head { display: flex; align-items: flex-start; gap: 10px; }
+.wm-card-head > div { flex: 1; min-width: 0; }
+.wm-card-icon { width: 30px; height: 30px; flex-shrink: 0; display: grid; place-items: center; border-radius: 50%; background: #10282b; border: 1.5px solid #ffe2a0; color: #ffe2a0; }
+.wm-x { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; margin: -4px -6px 0 0; }
+.wm-where { display: flex; align-items: center; gap: 6px; margin: 9px 0 0; font-size: 12px; color: #eef3ea; font-variant-numeric: tabular-nums; }
+.wm-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
+.wm-actions button { min-height: 38px; padding: 0 11px; display: inline-flex; align-items: center; gap: 6px; border-radius: 9px; background: #163236; border: 1px solid #d8e8de30; font-size: 12px; }
+.wm-actions button:first-child { background: #2b3f2f; border-color: #e8f3c860; }
+/* One scroll for the whole card (marks and places together), never a list
+   scrolling inside a scrolling card; the heading stays pinned at the top. */
+.wm-list { display: block; min-height: 0; max-height: 100%; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #d8e8de55 transparent; }
+.wm-list .wm-card-head { position: sticky; top: -12px; z-index: 1; margin: -12px -14px 0; padding: 12px 14px 6px; background: #0a1c20f2; border-radius: 14px 14px 0 0; }
+.wm-list ul { list-style: none; margin: 8px -6px 0; padding: 0; overflow: visible; }
+.wm-list li { display: flex; align-items: center; border-bottom: 1px solid #e2e7d61f; }
+.wm-row { flex: 1; min-width: 0; min-height: 42px; display: flex; align-items: center; gap: 9px; padding: 4px 6px; text-align: left; }
+.wm-row:hover { background: #cee8e510; }
+.wm-row-icon { width: 22px; height: 22px; flex-shrink: 0; display: grid; place-items: center; border-radius: 50%; border: 1.3px solid #a9e2d6; color: #a9e2d6; }
+.wm-row-icon svg { width: 12px; height: 12px; }
+.wm-row-icon.found { border-color: #ffe2a0; color: #ffe2a0; }
+.wm-row-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; }
+.wm-row-name small { letter-spacing: 0; }
+.wm-row > small { font-variant-numeric: tabular-nums; }
+.wm-row-go { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 9px; }
+.wm-row-go:hover { background: #cee8e514; }
+
+/* the legend, above the scale */
+.wm-legend { position: absolute; left: max(14px, env(safe-area-inset-left)); bottom: 62px; width: min(300px, calc(100vw - 92px)); padding: 11px 13px; border-radius: 12px; background: #0a1c20e0; border: 1px solid #d8e8de30; backdrop-filter: blur(10px); font-size: 11px; }
+.wm-legend ul { list-style: none; margin: 7px 0; padding: 0; display: grid; gap: 6px; }
+.wm-legend li { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.wm-legend small { color: #c5dfd5; line-height: 1.5; display: block; }
+.wm-legend i { display: inline-block; flex-shrink: 0; }
+.k-you { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 12px solid #fbfaf0; filter: drop-shadow(0 0 1px #000); }
+.k-memory { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid #a9e2d6; background: #10282b; }
+.k-memory.found { border-color: #ffe2a0; background: #ffe2a0; }
+.k-place { width: 9px; height: 9px; background: #f1e6cf; transform: rotate(45deg); outline: 1px solid #0b1a1d; }
+.k-pin { width: 11px; height: 11px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: #ffd36e; outline: 1px solid #0b1a1d; }
+.k-mark { width: 12px; height: 12px; background: linear-gradient(45deg, transparent 42%, #ff6f91 42%, #ff6f91 58%, transparent 58%), linear-gradient(-45deg, transparent 42%, #ff6f91 42%, #ff6f91 58%, transparent 58%); }
+.k-unknown { width: 8px; height: 8px; transform: rotate(45deg); border: 1px dashed #a9e2d6; background: #22403f; }
+.k-peg, .k-starborn { width: 11px; height: 11px; border-radius: 50%; background: #fbeccb; outline: 1px solid #0b1a1d; }
+.k-starborn { background: #d9ccff; }
+.k-line { width: 20px; height: 3px; border-radius: 2px; box-shadow: 0 0 0 1px #3a332655; }
+.k-line.path { background: #f4ecd2; } .k-line.trail { background: #efe2bf; height: 2px; } .k-line.road { background: #e9e4d6; height: 4px; }
+.k-area { width: 14px; height: 10px; border-radius: 2px; }
+.k-area.building { background: #d9cdb6; outline: 1px solid #4a3c2c; }
+.k-area.water { background: #5d97a3; }
+.k-area.uncharted { background: #7d817a; }
+
+/* the corner minimap's canvas (MiniRadar) */
+.mini-radar { position: absolute; inset: 0; width: 100%; height: 100%; display: block; border-radius: 50%; }
+
+@media (max-width: 700px), (max-height: 520px) {
+  .wm-title span, .wm-title { font-size: 13px; }
+  .wm-top { gap: 6px; padding-bottom: 14px; }
+  .wm-regions button, .wm-places-toggle { min-height: 34px; padding: 0 10px; font-size: 11px; }
+  .wm-panel { top: auto; bottom: max(44px, calc(env(safe-area-inset-bottom) + 36px)); left: max(10px, env(safe-area-inset-left)); width: min(320px, calc(100vw - 80px)); max-height: 46dvh; }
+  .wm-card { padding: 9px 11px; }
+  .wm-card strong { font-size: 15px; }
+  .wm-legend { bottom: auto; top: 64px; }
+  /* the scale and coordinates move to the bottom right, clear of the card */
+  .wm-foot { left: auto; right: max(64px, calc(env(safe-area-inset-right) + 56px)); align-items: flex-end; }
+  .wm-controls button { width: 40px; height: 40px; }
+}
+@media (max-height: 520px) {
+  .wm-title { display: none; }
+  .wm-panel { max-height: calc(100dvh - 120px); bottom: 40px; }
+  .wm-list ul { max-height: calc(100dvh - 200px); }
+}
+@media (max-width: 480px) and (min-height: 521px) {
+  .wm-panel { width: calc(100vw - 72px); }
+  .wm-title { display: none; }
+}
+
+.wm-note { margin: 4px 0 0; color: #c9ddd4; font-size: 11px; line-height: 1.45; }
+.wm-list-head { display: block; margin: 8px 2px 2px; color: #c5dfd5; font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; }
+.wm-card-icon.g-mark { border-color: #ff6f91; color: #ff6f91; }
+.wm-card-icon.g-mark svg { stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; fill: none; }
+.wm-card-icon.g-unknown { border-color: #a9e2d6; color: #a9e2d6; border-style: dashed; }

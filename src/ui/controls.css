@@ -1,0 +1,302 @@
+/* Controls guide, welcome tips, contextual legend and the travel touch buttons.
+   Colours and fonts come from the game's tokens (global.css). */
+
+/* ---- the ? button: top left, under the little stars, out of the way of the minimap */
+.controls-help {
+  position: fixed;
+  top: calc(var(--explore-top, 14px) + 54px);
+  left: var(--explore-edge, max(18px, env(safe-area-inset-left)));
+  z-index: 30;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 248, 230, 0.86);
+  color: #66554c;
+  box-shadow: 0 2px 8px rgba(74, 58, 48, 0.18);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.controls-help:hover { background: rgba(255, 250, 240, 0.97); }
+.controls-help:focus-visible { outline: 2px solid #ffe7a8; outline-offset: 2px; }
+.exploration-ui[data-ui-mode="immersive"] .controls-help,
+.exploration-ui[data-ui-blocked="true"] .controls-help { display: none; }
+
+/* ---- the guide ---- */
+.controls-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: max(10px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left));
+  background: rgba(38, 30, 26, 0.42);
+  backdrop-filter: blur(3px);
+}
+
+.controls-card {
+  width: min(980px, 100%);
+  max-height: min(92dvh, 100%);
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #fbf5e8;
+  color: #4a3a30;
+  box-shadow: 0 18px 50px rgba(40, 30, 24, 0.35);
+  overflow: hidden;
+  font-family: var(--font-body, system-ui, sans-serif);
+}
+
+.controls-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px 10px;
+}
+.controls-head small { font-size: 11px; letter-spacing: 0.14em; color: #9a7f6c; }
+.controls-head h2 { margin: 2px 0 2px; font: italic 600 26px/1.15 var(--font-display, Georgia, serif); }
+.controls-head p { margin: 0; font-size: 14px; color: #7a6557; }
+.controls-close {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(109, 86, 65, 0.25);
+  background: #fff9ee;
+  color: #66554c;
+  cursor: pointer;
+}
+
+.cg-colhead,
+.cg-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.95fr) minmax(0, 1fr);
+  gap: 14px;
+  padding: 0 22px;
+}
+.cg-colhead {
+  font: 700 11px/1 var(--font-body, sans-serif);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9a7f6c;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(109, 86, 65, 0.18);
+}
+
+.controls-body {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 22px 8px;
+  overscroll-behavior: contain;
+}
+
+.cg-group { padding: 14px 0 6px; }
+.cg-group + .cg-group { border-top: 1px dashed rgba(109, 86, 65, 0.18); }
+.cg-group h3 {
+  margin: 0 0 4px;
+  font: italic 600 18px/1.2 var(--font-display, Georgia, serif);
+  color: #5a4638;
+}
+.cg-group ul { list-style: none; margin: 0; padding: 0; }
+
+.cg-row {
+  align-items: center;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(109, 86, 65, 0.08);
+}
+.cg-row:last-child { border-bottom: 0; }
+.cg-name { min-width: 0; }
+.cg-name b { display: block; font-size: 14.5px; color: #3f3129; }
+.cg-name span { display: block; font-size: 13px; line-height: 1.35; color: #7a6557; }
+.cg-keys { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+.cg-keys kbd {
+  font: 700 12.5px/1 var(--font-body, sans-serif);
+  padding: 6px 8px;
+  min-width: 26px;
+  text-align: center;
+  border-radius: 7px;
+  background: #4a3a30;
+  color: #fbf5e8;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.25);
+}
+.cg-touch { font-size: 13px; line-height: 1.35; color: #5f4d40; }
+.cg-none { color: #b0a093; }
+
+.controls-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 22px max(12px, env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(109, 86, 65, 0.18);
+  font-size: 13px;
+  color: #7a6557;
+}
+.controls-tips {
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(109, 86, 65, 0.35);
+  background: #fff9ee;
+  color: #4a3a30;
+  font: 600 14px var(--font-body, sans-serif);
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .controls-head h2 { font-size: 22px; }
+  .cg-colhead { display: none; }
+  .cg-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .cg-touch::before { content: "Touch · "; font-weight: 700; color: #9a7f6c; }
+  .controls-foot { flex-direction: column; align-items: stretch; text-align: center; }
+}
+
+/* a phone on its side (844 x 390): the card gives the page, the body scrolls */
+@media (orientation: landscape) and (max-height: 480px) {
+  .controls-card { max-height: 100%; border-radius: 14px; }
+  .controls-head { padding: 10px 16px 4px; }
+  .controls-head h2 { font-size: 19px; }
+  .controls-head p { display: none; }
+  .cg-colhead, .cg-row { padding-left: 16px; padding-right: 16px; }
+  .cg-row { padding-top: 5px; padding-bottom: 5px; }
+  .cg-name span { font-size: 12px; }
+  .controls-body { padding-bottom: 4px; }
+  .controls-foot { padding: 8px 16px; }
+  .controls-tips { min-height: 44px; }
+}
+
+/* ---- welcome tips: a card at the top, never a blocker ---- */
+.welcome-tip {
+  position: fixed;
+  top: calc(var(--explore-top, 14px) + var(--mini-stack, 130px) + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  width: min(380px, calc(100vw - 32px));
+  box-sizing: border-box;
+  padding: 14px 16px 12px;
+  border-radius: 16px;
+  background: rgba(255, 250, 240, 0.96);
+  color: #4a3a30;
+  box-shadow: 0 10px 28px rgba(40, 30, 24, 0.26);
+  pointer-events: auto;
+  font-family: var(--font-body, system-ui, sans-serif);
+}
+.welcome-tip small { font-size: 11px; letter-spacing: 0.1em; color: #9a7f6c; text-transform: uppercase; }
+.welcome-tip p { margin: 4px 0 10px; font-size: 15px; line-height: 1.4; }
+.welcome-tip div { display: flex; justify-content: flex-end; gap: 8px; }
+.welcome-tip button {
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(109, 86, 65, 0.3);
+  background: transparent;
+  color: #5a4638;
+  font: 600 14px var(--font-body, sans-serif);
+  cursor: pointer;
+}
+.welcome-tip button.primary { background: #4a3a30; color: #fbf5e8; border-color: #4a3a30; }
+@media (orientation: landscape) and (max-height: 480px) {
+  .welcome-tip { top: calc(var(--explore-top, 14px) + var(--mini-stack, 130px) + 8px); }
+  .welcome-tip p { font-size: 14px; margin-bottom: 6px; }
+}
+
+/* ---- the contextual legend (above the hint line, in the air or on a horse) ---- */
+.control-legend {
+  position: absolute;
+  left: 50%;
+  bottom: 72px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 12px;
+  max-width: min(640px, calc(100vw - 260px));
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(40, 34, 30, 0.42);
+  color: rgba(255, 250, 240, 0.94);
+  font: 600 12px/1.2 var(--font-ui, inherit);
+  pointer-events: none;
+}
+.control-legend:empty { display: none; }
+.control-legend span { display: inline-flex; align-items: center; gap: 5px; transition: opacity 0.6s ease; }
+.control-legend kbd,
+.control-legend .cl-touch {
+  font: inherit;
+  padding: 1px 6px;
+  border-radius: 5px;
+  background: rgba(255, 250, 240, 0.18);
+}
+.control-legend .cl-touch { font-weight: 800; }
+.control-legend .cl-tip { opacity: 0.85; }
+
+@media (max-width: 600px) {
+  .control-legend { bottom: 58px; font-size: 11.5px; }
+}
+
+/* ---- touch: the context row (trick, worlds, home, arrive now), bottom centre, clear of the joystick and the minimap ---- */
+.touch-context {
+  position: absolute;
+  left: 50%;
+  bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  pointer-events: none;
+}
+.touch-context button {
+  min-width: 44px;
+  height: 44px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(255, 248, 230, 0.9);
+  color: #66554c;
+  font: 700 13px var(--font-body, sans-serif);
+  box-shadow: 0 2px 8px rgba(74, 58, 48, 0.18);
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+.touch-context button.is-arrive { background: #4a3a30; color: #fbf5e8; border-color: #4a3a30; }
+
+.exploration-ui:not([data-ui-panel="none"]) .controls-help,
+.exploration-ui:not([data-ui-panel="none"]) .welcome-tip,
+.exploration-ui[data-ui-blocked="true"] .welcome-tip,
+.exploration-ui[data-ui-mode="immersive"] .welcome-tip { display: none; }
+@media (pointer: coarse) {
+  .touch-context { bottom: calc(176px + env(safe-area-inset-bottom, 0px)); max-width: calc(100vw - 32px); gap: 6px; }
+  .touch-context button { padding: 0 10px; }
+  .control-legend { bottom: calc(226px + env(safe-area-inset-bottom, 0px)); max-width: calc(100vw - 40px); border-radius: 14px; }
+}
+@media (pointer: coarse) and (orientation: landscape) and (max-height: 480px) {
+  .touch-context { bottom: max(12px, env(safe-area-inset-bottom)); }
+  .control-legend { bottom: 64px; max-width: calc(100vw - 330px); }
+}
+
+/* Landing choices wrap inside the space between the joystick and flight buttons. */
+.touch-context { flex-wrap: wrap; justify-content: center; width: max-content; max-width: calc(100vw - 32px); }
+.touch-context button { white-space: nowrap; }
+.touch-land-gallop { font-weight: 800; }
+.touch-action-label { font: 600 10px/1.1 var(--font-body, sans-serif); display: block; }
+.touch-jump:has(.touch-action-label) { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1px; }
+@media (pointer: coarse) {
+  .control-legend { bottom: calc(280px + env(safe-area-inset-bottom, 0px)); }
+}
+@media (pointer: coarse) and (orientation: landscape) and (max-height: 480px) {
+  .touch-context { max-width: calc(100vw - 330px); gap: 5px; }
+  .touch-context button { font-size: 11px; padding: 0 8px; }
+  .control-legend { bottom: 116px; }
+}
+
+.controls-credits { margin: 10px 0 0; font-size: 11px; line-height: 1.45; opacity: 0.68; }

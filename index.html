@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#030611" />
+    <meta name="description" content="An explorable 3D world, made as a gift." />
+    <meta name="referrer" content="no-referrer" />
+    <title>A world for you</title>
+    <link rel="preload" href="/boot/letter.css" as="style" />
+    <link rel="preload" href="/assets/placeholders/letter.jpg" as="image" fetchpriority="high" />
+    <link rel="preload" href="/assets/boot/earth-mini.jpg" as="image" />
+    <link rel="preload" href="/assets/fonts/fraunces-variable.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/assets/fonts/nunito-sans-variable.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/boot/boot.css" />
+    <!--gift-letter-->
+  </head>
+  <body>
+    <!-- The letter opens the page and the world loads behind it
+         (public/boot/letter.js fills it in; src/ui/letterVeil.ts is the game's side). -->
+    <div id="letter-veil" role="dialog" aria-modal="true" aria-label="Before you begin: a letter">
+      <template shadowrootmode="open">
+        <link rel="stylesheet" href="/boot/letter.css" />
+        <div class="scroller" tabindex="-1">
+          <a class="skip-link" href="#letter">Read the letter</a>
+          <main class="keepsake">
+            <header class="masthead">
+              <span data-field="for"></span>
+              <span class="mark" aria-hidden="true">✦</span>
+              <span data-field="from"></span>
+            </header>
+            <div class="spread">
+              <figure class="artwork">
+                <img src="/assets/placeholders/letter.jpg" width="1280" height="800" fetchpriority="high"
+                  alt="Home at night: a rangoli ringed with lit diyas, gulmohar trees and a chai stall." />
+              </figure>
+              <article class="letter" id="letter" tabindex="-1" aria-labelledby="letter-heading">
+                <h1 id="letter-heading" data-field="heading"></h1>
+                <p class="greeting" data-field="greeting"></p>
+                <div class="body" data-field="paragraphs"></div>
+                <p class="signoff" data-field="signoff"></p>
+              </article>
+            </div>
+            <footer class="enter">
+              <a class="enter-link" href="/?skipIntro=1" data-letter-enter><span data-field="enter">Enter the world</span> <span aria-hidden="true">→</span></a>
+              <a class="personalize-link" href="/?personalize" data-personalize hidden>Make a world like this for someone</a>
+            </footer>
+          </main>
+        </div>
+      </template>
+    </div>
+    <script src="/boot/letter.js"></script>
+    <div id="boot-screen" role="progressbar" aria-label="Loading the world" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="boot-sky" aria-hidden="true"></div>
+      <div class="boot-system" aria-hidden="true">
+        <svg class="boot-ring" viewBox="0 0 100 100">
+          <defs><linearGradient id="boot-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd7a8" /><stop offset="1" stop-color="#ff9fbf" /></linearGradient></defs>
+          <circle class="track" cx="50" cy="50" r="46" />
+          <circle class="fill" cx="50" cy="50" r="46" />
+        </svg>
+        <div class="boot-moon-orbit"><div class="boot-moon"></div></div>
+        <div class="boot-planet"><div class="boot-surface"></div></div>
+      </div>
+    </div>
+    <script src="/boot/progress.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

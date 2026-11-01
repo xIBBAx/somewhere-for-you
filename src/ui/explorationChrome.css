@@ -1,0 +1,161 @@
+/* The world is the canvas. These surfaces open by intention, one at a time. */
+.exploration-ui {
+  --explore-surface: #f8f0dff2; --explore-ink: #3b493f; --explore-line: #8c967f55;
+  --explore-edge: max(16px, env(safe-area-inset-left));
+  --explore-top: max(14px, env(safe-area-inset-top));
+  /* Corner minimap disc, and the whole column it stands in (disc plus its label line). */
+  --mini-size: 128px; --mini-stack: calc(var(--mini-size) + 48px);
+}
+@media (pointer: coarse), (max-width: 599px) { .exploration-ui { --mini-size: 96px; } }
+.exploration-ui[data-ui-sky="true"] { --explore-surface: #182638f2; --explore-ink: #f0e5ce; --explore-line: #afbdcf55; }
+.explore-reveal, .explore-context, .explore-bearing {
+  position: fixed; z-index: 35; border: 1px solid var(--explore-line); border-radius: 999px;
+  background: var(--explore-surface); color: var(--explore-ink); box-shadow: 0 2px 18px #172b241a;
+  font: 12px var(--font-body); cursor: pointer; pointer-events: auto;
+  display: flex; align-items: center; gap: 9px; min-height: 44px; padding: 0 15px;
+}
+.explore-reveal { left: var(--explore-edge); top: var(--explore-top); }
+.explore-reveal svg, .explore-context svg, .explore-bearing > svg { width: 18px; height: 18px; stroke-width: 1.5; flex-shrink: 0; }
+.explore-reveal.is-immersive:not([aria-expanded="true"]) { background: #1c292d30; color: white; border-color: #ffffff38; box-shadow: none; text-shadow: 0 1px 4px #000b; }
+.explore-reveal.is-immersive:not([aria-expanded="true"]) span { width: 0; overflow: hidden; font-size: 0; }
+.explore-reveal.is-immersive:not([aria-expanded="true"]) { width: 44px; padding: 0; justify-content: center; gap: 0; }
+.explore-reveal.is-immersive:hover, .explore-reveal.is-immersive:focus-visible { background: var(--explore-surface); color: var(--explore-ink); }
+/* The corner minimap owns the top-right; contextual chips restack beneath it. */
+.explore-context, .explore-bearing { top: calc(var(--explore-top) + var(--mini-stack) + 6px); right: max(16px, env(safe-area-inset-right)); max-width: min(300px, calc(100vw - 190px)); border-radius: 15px; text-align: left; }
+.exploration-ui .site-card-reopen { top: calc(var(--explore-top) + var(--mini-stack) + 6px); right: max(16px, env(safe-area-inset-right)); }
+.explore-context span, .explore-bearing span { padding: 7px 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.explore-context small, .explore-bearing small { display: block; font-size: 10px; opacity: .75; margin-top: 2px; }
+.exploration-ui button:focus-visible, .exploration-ui select:focus-visible { outline: 2px solid #b68c50; outline-offset: 3px; }
+/* Old action owners remain mounted; their permanent launchers live in Explore. */
+.exploration-ui :is(.hud-stars,.hud-found,.hud-quality,.hud-character,.hud-camera,.hud-mute,.hud-time,.hud-whistle,.hud-flight-keys,.hud-book,.touch-moments) { display: none; }
+.exploration-ui .hud-hint { bottom: max(22px, env(safe-area-inset-bottom)); max-width: min(500px, calc(100vw - 360px)); padding: 9px 15px; background: var(--explore-surface); color: var(--explore-ink); border: 1px solid var(--explore-line); box-shadow: none; font-size: 12px; line-height: 1.5; }
+.exploration-ui .hud-hint:not(.is-contextual) { animation: explore-hint 9s ease both; }
+@keyframes explore-hint { 0% { opacity: 0; } 8%,65% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
+.exploration-ui :is(.discovery-toast,.activity-result,.book-toast) {
+  left: var(--explore-edge); right: auto; top: auto; bottom: max(18px, env(safe-area-inset-bottom));
+  transform: none; width: min(275px, calc(100vw - 380px)); box-sizing: border-box;
+  background: var(--explore-surface); color: var(--explore-ink); border: 1px solid var(--explore-line); box-shadow: 0 4px 24px #172b241a;
+}
+.exploration-ui .discovery-toast { animation: none; }
+.exploration-ui .discovery-title, .exploration-ui .book-toast-title, .exploration-ui .activity-result-title { font-size: 17px; }
+.exploration-ui .discovery-line, .exploration-ui .book-toast-line, .exploration-ui .activity-result-line { font-size: 11px; line-height: 1.5; }
+/* the sky's dark card: its text must stay light enough to read */
+.exploration-ui[data-ui-sky="true"] :is(.discovery-line,.book-toast-line,.activity-result-line) { color: var(--explore-ink); opacity: .86; }
+.exploration-ui:not([data-ui-notification="discovery"]) .discovery-toast,
+.exploration-ui:not([data-ui-notification="book"]) .book-toast,
+.exploration-ui:not([data-ui-notification="result"]) .activity-result { display: none; }
+.exploration-ui:not([data-ui-notification="none"]) :is(.hud-hint,.climate-bubble) { display: none; }
+.exploration-ui[data-ui-sky="true"] .explore-bearing { display: none; }
+.exploration-ui[data-ui-priority="journey"] :is(.hud-hint,.explore-bearing,.climate-bubble,.deer-offer),
+.exploration-ui[data-ui-priority="activity"] :is(.hud-hint,.climate-bubble,.deer-offer) { display: none; }
+/* Optional presentation disappears accessibly (no invisible tab stops). Deliberate
+   dialogs and the invisible movement/look surfaces remain available. */
+.exploration-ui[data-ui-mode="immersive"] :is(.explore-context,.explore-bearing,.hud-hint,.discovery-toast,.book-toast,.activity-result,.climate-bubble,.speech-bubble,.deer-offer,.race-clock,.throw-meter,.carried-release,.touch-actions,.touch-context,.control-legend,.joy-base,.joy-knob) { display: none; }
+.exploration-ui[data-ui-mode="immersive"] .touch-look-zone { top: 0; bottom: 0; }
+/* Named touch buttons already explain flight. Keep their targets clear of the
+   duplicate key legend, and give brief notices their own space above the row. */
+@media (pointer: coarse) {
+  .exploration-ui:has(.touch-context) :is(.control-legend,.explore-context) { display: none; }
+  .exploration-ui:has(.touch-context) .hud-hint.is-contextual { display: none; }
+  .exploration-ui:has(.touch-context) .hud-hint { bottom: calc(286px + env(safe-area-inset-bottom, 0px)); max-width: calc(100vw - 40px); }
+}
+@media (pointer: coarse) and (orientation: landscape) and (max-height: 480px) {
+  .exploration-ui:has(.touch-context) .hud-hint { bottom: calc(124px + env(safe-area-inset-bottom, 0px)); max-width: calc(100vw - 360px); }
+}
+.exploration-ui:not([data-ui-panel="none"]) :is(.explore-context,.explore-bearing,.hud-hint,.discovery-toast,.book-toast,.activity-result,.deer-offer,.speech-bubble,.climate-bubble,.touch-actions,.touch-context,.control-legend,.joy-base,.joy-knob),
+.exploration-ui[data-ui-blocked="true"] :is(.explore-context,.explore-bearing,.hud-hint,.discovery-toast,.book-toast,.activity-result,.deer-offer,.speech-bubble,.climate-bubble,.touch-actions,.touch-context,.control-legend,.joy-base,.joy-knob) { display: none; }
+.exploration-ui:not([data-ui-panel="none"]) .touch-ui, .exploration-ui[data-ui-blocked="true"]:not([data-ui-photo="true"]) .touch-ui { visibility: hidden; }
+/* The same reading corner hosts navigation, journeys and sky information. */
+.exploration-ui :is(.observation-card,.sky-context,.together-bar) {
+  position: fixed; z-index: 34; left: var(--explore-edge); right: auto;
+  top: calc(var(--explore-top) + 56px); bottom: auto; transform: none;
+  width: min(320px, calc(100vw - 32px)); max-height: calc(100dvh - var(--explore-top) - 78px - env(safe-area-inset-bottom));
+  overflow: auto; box-sizing: border-box; border: 1px solid var(--explore-line); border-radius: 18px;
+  background: var(--explore-surface); color: var(--explore-ink); box-shadow: 0 8px 36px #172b2426;
+  padding: 16px 20px; pointer-events: auto;
+}
+.exploration-ui .observation-card h3 { font-size: 23px; }
+.exploration-ui .observation-card p { font-size: 12px; }
+.exploration-ui .observation-card button { min-height: 40px; }
+.exploration-ui .sky-context { display: grid; gap: 15px; }
+.exploration-ui .sky-context :is(.sky-panel,.site-card,.site-card-reopen,.hazard-card,.lunar-hint) {
+  position: static; inset: auto; width: auto; max-width: none; max-height: none; padding: 0; margin: 0;
+  transform: none; background: transparent; border: 0; box-shadow: none; text-align: left; color: inherit; font-size: 12px;
+}
+.exploration-ui .sky-context .sky-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.exploration-ui .sky-context button { min-height: 44px; }
+.exploration-ui .sky-context .sky-panel { display: block; }
+.exploration-ui .together-bar { display: grid; gap: 8px; }
+.exploration-ui .together-bar button { min-height: 44px; }
+.exploration-ui .deer-offer { bottom: 18px; top: auto; left: 50%; transform: translateX(-50%); max-width: min(320px, calc(100vw - 360px)); }
+.exploration-ui:has(.deer-offer) .hud-hint { display: none; }
+.explore-menu-scrim { position: fixed; inset: 0; z-index: 36; background: #16272220; pointer-events: auto; }
+.explore-menu {
+  position: absolute; top: var(--explore-top); left: var(--explore-edge); width: min(380px, calc(100vw - 32px));
+  max-height: calc(100dvh - var(--explore-top) - 16px - env(safe-area-inset-bottom)); overflow: auto;
+  box-sizing: border-box; padding: 22px; border-radius: 24px 24px 24px 7px;
+  background: var(--explore-surface); color: var(--explore-ink); border: 1px solid var(--explore-line);
+  box-shadow: 0 12px 50px #152a3138; font: 13px var(--font-body); scrollbar-width: thin;
+}
+.explore-menu header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.explore-menu header small { letter-spacing: .15em; font-size: 8px; opacity: .65; }
+.explore-menu h2 { font: normal 25px var(--font-display); margin: 8px 0 18px; }
+.explore-menu button { cursor: pointer; color: inherit; font: inherit; background: transparent; border: 0; }
+.explore-menu header > button { min-width: 44px; min-height: 44px; display: grid; place-items: center; margin: -9px -12px 0 0; }
+.explore-menu svg { width: 18px; height: 18px; stroke-width: 1.5; flex-shrink: 0; }
+.explore-menu button:disabled { opacity: .4; cursor: default; }
+.explore-modes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
+.explore-modes button { border: 1px solid var(--explore-line); border-radius: 13px; min-height: 64px; display: flex; align-items: center; gap: 9px; padding: 10px; text-align: left; }
+.explore-modes button[aria-pressed="true"] { background: #a6b09626; border-color: #81926d; }
+.explore-modes small { display: block; font-size: 10px; opacity: .65; margin-top: 4px; }
+.explore-tools { display: grid; grid-template-columns: 1fr; }
+.explore-tools button { min-height: 46px; display: flex; align-items: center; gap: 11px; text-align: left; padding: 5px 3px; border-bottom: 1px solid var(--explore-line); }
+.explore-tools button > span { flex: 1; }
+.explore-tools kbd { font: 10px var(--font-body); opacity: .55; }
+.explore-tools .explore-refresh small { display: block; margin-top: 2px; font-size: 10.5px; line-height: 1.3; opacity: .62; }
+.explore-settings { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 12px 0; }
+.explore-settings button, .explore-settings label { min-height: 44px; display: flex; align-items: center; gap: 7px; font-size: 11px; }
+.explore-settings select { border: 0; border-radius: 5px; font: inherit; background: transparent; color: inherit; max-width: 160px; }
+.explore-settings option { color: #283d32; background: #faf2e4; }
+.explore-menu footer { border-top: 1px solid var(--explore-line); padding-top: 12px; font-size: 11px; opacity: .75; }
+.explore-menu footer p { font-size: 10px; line-height: 1.7; margin: 8px 0 0; }
+.exploration-ui .touch-actions button { border: 1px solid #fcf5df70; background: #f8f0dfc7; color: #4c5c50; box-shadow: 0 2px 14px #23392b18; }
+.exploration-ui .touch-actions .touch-run[aria-pressed="true"] { background: #35483fe8; color: #fff3db; }
+.exploration-ui .touch-jump, .exploration-ui .touch-run { right: max(24px, env(safe-area-inset-right)); bottom: calc(92px + env(safe-area-inset-bottom)); width: 48px; height: 48px; }
+.exploration-ui .touch-run { right: calc(86px + env(safe-area-inset-right)); }
+.exploration-ui .touch-descend { right: calc(86px + env(safe-area-inset-right)); bottom: calc(28px + env(safe-area-inset-bottom)); }
+.exploration-ui .touch-interact { width: 56px; height: 56px; right: max(20px, env(safe-area-inset-right)); bottom: calc(24px + env(safe-area-inset-bottom)); }
+.exploration-ui .touch-stop { position: absolute; right: calc(86px + env(safe-area-inset-right)); bottom: calc(28px + env(safe-area-inset-bottom)); width: 48px; height: 48px; border-radius: 50%; pointer-events: auto; }
+.exploration-ui .touch-stop[hidden] { display: none; }
+@media (max-height: 540px) and (min-width: 600px) {
+  .explore-menu { width: min(520px, calc(100vw - 32px)); padding: 16px 20px; }
+  .explore-menu h2 { font-size: 22px; margin-bottom: 12px; }
+  .explore-tools { grid-template-columns: 1fr 1fr; gap: 0 14px; }
+  .explore-tools button { font-size: 11px; }
+  .explore-modes { margin-bottom: 6px; }
+  .explore-modes button { min-height: 52px; }
+  .exploration-ui :is(.observation-card,.sky-context,.together-bar) { width: 290px; padding: 12px 16px; }
+}
+@media (max-width: 599px) {
+  .explore-context, .explore-bearing { max-width: calc(100vw - 32px); }
+  .exploration-ui .hud-hint { max-width: calc(100vw - 180px); font-size: 10px; }
+  .exploration-ui :is(.discovery-toast,.activity-result,.book-toast) { width: calc(100vw - 180px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .explore-menu, .exploration-ui :is(.observation-card,.sky-context,.together-bar) { animation: explore-open .22s ease both; }
+  @keyframes explore-open { from { opacity: 0; translate: 0 7px; } to { opacity: 1; translate: 0 0; } }
+}
+@media (prefers-reduced-motion: reduce) {
+  .exploration-ui *, .exploration-ui *::before, .exploration-ui *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+.explore-panel-shield { position: fixed; inset: 0; z-index: 33; pointer-events: auto; background: #11251c08; }
+/* The menu supplies its own close button; hide the launcher underneath its
+   translucent paper rather than showing a second label through the header. */
+.exploration-ui[data-ui-panel="menu"] .explore-reveal { display: none; }
+
+/* Landscape keeps the reading corner clear of the radar and bottom flight controls. */
+@media (max-height: 480px) and (min-width: 600px) {
+  .exploration-ui { --mini-size: 80px; }
+  .explore-context, .explore-bearing { max-width: 190px; }
+}

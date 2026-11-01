@@ -1,0 +1,722 @@
+[
+  {
+    "file": "barasingha-fawn-lod1.glb",
+    "bytes": 121368,
+    "before": 298068,
+    "triangles": 7468,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "ffcb396fbc3cfda867d8ee2caf95ff2bbe22c93ed98d6650c55c69c053acc2fd"
+  },
+  {
+    "file": "barasingha-fawn.glb",
+    "bytes": 764864,
+    "before": 1598892,
+    "triangles": 24896,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "1bd62f919bbfa2012f4784e0bd222afb7aab5223bf1673b5580c426db7555500"
+  },
+  {
+    "file": "barasingha-lod1.glb",
+    "bytes": 156348,
+    "before": 404540,
+    "triangles": 10998,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "3874bce148fdbdeb3cd84bdb9cca0be8a255c62a1662509d371cb6bf604d3fb9"
+  },
+  {
+    "file": "barasingha.glb",
+    "bytes": 1047920,
+    "before": 2257760,
+    "triangles": 36664,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "41a706ac6e8ebe673e20ea551908fa33319a8a6afd3e9f9b56e084cd86b6e396"
+  },
+  {
+    "file": "chital-fawn-lod1.glb",
+    "bytes": 117040,
+    "before": 287392,
+    "triangles": 7152,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "4f0d167aa3285da19a709dfa38d4471054f875f017df8fc223a138b4b6b96206"
+  },
+  {
+    "file": "chital-fawn.glb",
+    "bytes": 730224,
+    "before": 1525632,
+    "triangles": 23846,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "93bddf46b65b485825f207bc84e1d1b02a632361cc6a19a6c0fe940d33f2d245"
+  },
+  {
+    "file": "chital-lod1.glb",
+    "bytes": 142272,
+    "before": 358712,
+    "triangles": 9460,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "67ec76cfb9659fa7e874f2eb1936ab4914fb0e44f8a23d84f751c28303701fdd"
+  },
+  {
+    "file": "chital.glb",
+    "bytes": 928552,
+    "before": 1972888,
+    "triangles": 31540,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "424196656c454867e82461e3db886626f76c3a29f4e16906669a10566a2c4c6c"
+  },
+  {
+    "file": "elk-fawn-lod1.glb",
+    "bytes": 125416,
+    "before": 308608,
+    "triangles": 7791,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "cd8c96608b2069fc4bb0307a60a160f1952c42d0315882fce5d2402fbf2b9a86"
+  },
+  {
+    "file": "elk-fawn.glb",
+    "bytes": 789208,
+    "before": 1655316,
+    "triangles": 25972,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "09fdc0b0b558462372d2d84bd2996081a954cd9b2a72477dcea690254f31b30b"
+  },
+  {
+    "file": "elk-lod1.glb",
+    "bytes": 167172,
+    "before": 432808,
+    "triangles": 11782,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "469a5d96b1efce98b6e28eeec43247cd517e21460df2bf7bc75a1b916789d9bb"
+  },
+  {
+    "file": "elk.glb",
+    "bytes": 951104,
+    "before": 2383660,
+    "triangles": 39282,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "1e47698183d99dd34b72bdff11dcd99c0772bbe60b3c26e8ce72c10f4d4a85a7"
+  },
+  {
+    "file": "fallow-fawn-lod1.glb",
+    "bytes": 121032,
+    "before": 296808,
+    "triangles": 7440,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "546b05c89479899e01ec82d8d25c761619efabec69bfe869883614851ba3018c"
+  },
+  {
+    "file": "fallow-fawn.glb",
+    "bytes": 765840,
+    "before": 1597604,
+    "triangles": 24804,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "13fa840fbb5ce1d41f47cc22731c2188fb3433e897ab5e476cab600b1dcf9083"
+  },
+  {
+    "file": "fallow-lod1.glb",
+    "bytes": 155940,
+    "before": 399312,
+    "triangles": 10812,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "890d788a90a7d6d0072de2e76cb4ac2230acbcab7a34386aca1fa4f31d4341e8"
+  },
+  {
+    "file": "fallow.glb",
+    "bytes": 1040440,
+    "before": 2231236,
+    "triangles": 36050,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "35888bff8aab933bde1326aab1e0ee2d13e9777144b66353d8f22f8ced6d5487"
+  },
+  {
+    "file": "hog-fawn-lod1.glb",
+    "bytes": 135604,
+    "before": 332932,
+    "triangles": 8556,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "2773ebea904cf0dbc63dd94f18af57e7c303500d33c8857bddd42c4b35eb744c"
+  },
+  {
+    "file": "hog-fawn.glb",
+    "bytes": 906264,
+    "before": 1868560,
+    "triangles": 28520,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "90a882e5f40cfac5038bc8e29c7a036c2dbeccb9084c1b98b28b94a2294695c4"
+  },
+  {
+    "file": "hog-lod1.glb",
+    "bytes": 164368,
+    "before": 418152,
+    "triangles": 11302,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "7a7de23971a194a0d72ad84ac34d340a47942333f3e555abff683a73b6a650b0"
+  },
+  {
+    "file": "hog.glb",
+    "bytes": 1153060,
+    "before": 2414532,
+    "triangles": 37682,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "3d0820a8b373987e5519c661b41d3d4d3a5b0f7d68a9f5865474f1d870882c22"
+  },
+  {
+    "file": "moose-fawn-lod1.glb",
+    "bytes": 123332,
+    "before": 305176,
+    "triangles": 7694,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "f24ba9fa9dac91d9ccddf48382d3bb4d978b0ccea15dd46bffb54f5a15effc6c"
+  },
+  {
+    "file": "moose-fawn.glb",
+    "bytes": 773000,
+    "before": 1624728,
+    "triangles": 25648,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "a8cbaa2d647fc4881ce56685c7e58fd387a8da3d9167d9c666dc35bee8ef29c9"
+  },
+  {
+    "file": "moose-lod1.glb",
+    "bytes": 162264,
+    "before": 419180,
+    "triangles": 11341,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "ff56a0a031787354b244fe3ecb8cc3e8065d4ae2beb30a8b323020b8ca478d29"
+  },
+  {
+    "file": "moose.glb",
+    "bytes": 1058988,
+    "before": 2290720,
+    "triangles": 37810,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "4b66e3da5cabaff0063cd54b0c2bd7b20fcb63dae8ce91a9cb2c66c8d04afad7"
+  },
+  {
+    "file": "mule-fawn-lod1.glb",
+    "bytes": 121556,
+    "before": 298824,
+    "triangles": 7529,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "39b994f793b028d77d3ed3c8dd797ad558a4c0cdb6fee3cf5e76694405215cb3"
+  },
+  {
+    "file": "mule-fawn.glb",
+    "bytes": 764076,
+    "before": 1600544,
+    "triangles": 25100,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "0016a488b75b5ba90673410eea0b2ce2f595b1cbf6510d989d594bcbeb0af338"
+  },
+  {
+    "file": "mule-lod1.glb",
+    "bytes": 147268,
+    "before": 371504,
+    "triangles": 9826,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "d36cc50a262a7a01ae3b00d01066a5307e9556c488ec335564f81009be211fc1"
+  },
+  {
+    "file": "mule.glb",
+    "bytes": 961876,
+    "before": 2041264,
+    "triangles": 32758,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "563f05284af59c6188e5ce94110385325871646799439e2d97864615e6fe08b1"
+  },
+  {
+    "file": "muntjac-fawn-lod1.glb",
+    "bytes": 129492,
+    "before": 317732,
+    "triangles": 8110,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "f0b9b7265ad8863d7c79001b3ffa10e4c362d58591b3592f820eaccc67d5cd8f"
+  },
+  {
+    "file": "muntjac-fawn.glb",
+    "bytes": 849980,
+    "before": 1758816,
+    "triangles": 27034,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "5be80ddd0f51d9ee4495d2a03be88b2c709df4d896890f3249d2ca36d1e535b1"
+  },
+  {
+    "file": "muntjac-lod1.glb",
+    "bytes": 151416,
+    "before": 375904,
+    "triangles": 9886,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "c77e9916023c3e62c52da183d2da02c9a95f6400ff354aedd4d9d043d65f8402"
+  },
+  {
+    "file": "muntjac.glb",
+    "bytes": 1025336,
+    "before": 2129580,
+    "triangles": 32962,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "a7794d57094b1e0995fc5d803fb3c4a377f2ba54976b5845237d6dd847497902"
+  },
+  {
+    "file": "red-fawn-lod1.glb",
+    "bytes": 121924,
+    "before": 299812,
+    "triangles": 7537,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "8b205e70457ceeadd65d7caede4117e458cd062ba659b01f301451817ab0f4c9"
+  },
+  {
+    "file": "red-fawn.glb",
+    "bytes": 764664,
+    "before": 1603052,
+    "triangles": 25126,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "9ea945f518a596e9bb7061894d2dab587ae52b810f2107f4a412912bf5add5c8"
+  },
+  {
+    "file": "red-lod1.glb",
+    "bytes": 158156,
+    "before": 409664,
+    "triangles": 11167,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "bf03a95a30fcb074bd8fbcf804cb40dc4b01a45110ae9f3a3bdb5d6eea4b4577"
+  },
+  {
+    "file": "red.glb",
+    "bytes": 1055532,
+    "before": 2281840,
+    "triangles": 37226,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "d8bacaa2ecaee64f5d007726cec0be0fdbd1bd9bfece09be1175151081ca7877"
+  },
+  {
+    "file": "reindeer-fawn-lod1.glb",
+    "bytes": 128552,
+    "before": 318860,
+    "triangles": 8130,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "9d74c1785e6d20b4975a654b7e65e6d0a23de064efc1c61a2e19374c8c97155d"
+  },
+  {
+    "file": "reindeer-fawn.glb",
+    "bytes": 848212,
+    "before": 1761860,
+    "triangles": 27104,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "34c6d178b9dedb6df4cac1fb83ae1c146c95cd396e0769f86cf648882ec320b2"
+  },
+  {
+    "file": "reindeer-lod1.glb",
+    "bytes": 170040,
+    "before": 435676,
+    "triangles": 11817,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "2fa8caba7d411b7301e008eb038824c6f658392a0e019eb8f16408458b6c10c8"
+  },
+  {
+    "file": "reindeer.glb",
+    "bytes": 1146912,
+    "before": 2447652,
+    "triangles": 39400,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "4aa92b7a2eb4263eac3e7cca44432b3c98011cbc6486bab729cc7fa1e088e7d3"
+  },
+  {
+    "file": "roe-fawn-lod1.glb",
+    "bytes": 116228,
+    "before": 282584,
+    "triangles": 7008,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "2fe2feb19c17020237b9670d7f902883bc93bb74390caaadc64084732bb5620e"
+  },
+  {
+    "file": "roe-fawn.glb",
+    "bytes": 713996,
+    "before": 1491952,
+    "triangles": 23360,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "4c532366b067925151d15971e9c18a20a1d84fe82f53371a4c98c327175d85b0"
+  },
+  {
+    "file": "roe-lod1.glb",
+    "bytes": 134420,
+    "before": 331896,
+    "triangles": 8538,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "5ad26dff146a54a12f4c0962b1d58a1ec3d98e5662f78cc800e6502efbd722ac"
+  },
+  {
+    "file": "roe.glb",
+    "bytes": 858328,
+    "before": 1802492,
+    "triangles": 28466,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "727ec3ba53a1702f2533d354d33d56e6614e316ae731609edb4f1b3c3953fbaa"
+  },
+  {
+    "file": "sambar-fawn-lod1.glb",
+    "bytes": 125672,
+    "before": 310684,
+    "triangles": 7865,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "b294feae8375bdfa646e0c6a4a236857b596bd7d5e23763f6c2de83bc4179420"
+  },
+  {
+    "file": "sambar-fawn.glb",
+    "bytes": 808464,
+    "before": 1688168,
+    "triangles": 26218,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "953bdb9eaabd21f97a8a06a29b83c57fce3c04ef79f3df7c994dfa091f1df329"
+  },
+  {
+    "file": "sambar-lod1.glb",
+    "bytes": 158172,
+    "before": 401788,
+    "triangles": 10723,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "7f94400d8b95c5e71c27d2c83a53a228bc10b3e9108ee92d78366f1d14205c4d"
+  },
+  {
+    "file": "sambar.glb",
+    "bytes": 1041276,
+    "before": 2223696,
+    "triangles": 35752,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "2b798b6678d35dcd2ffa477b37c7db3f9e5573d0e1b5f1623aa2e510856f4a5b"
+  },
+  {
+    "file": "sika-fawn-lod1.glb",
+    "bytes": 120916,
+    "before": 295012,
+    "triangles": 7372,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "572c93048103ee41617c93780655f6e7b649383d61ab74412bac6a587ec6af4f"
+  },
+  {
+    "file": "sika-fawn.glb",
+    "bytes": 760764,
+    "before": 1584624,
+    "triangles": 24574,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "c1015f8942a5110c3994c17036386ef4974ad5a528343a5f6ffd8992478ff6cd"
+  },
+  {
+    "file": "sika-lod1.glb",
+    "bytes": 151044,
+    "before": 384856,
+    "triangles": 10318,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "c52d516587559397e5354212317d97e8cef4a0c9941ae1c9c61ed745a40bf6ea"
+  },
+  {
+    "file": "sika.glb",
+    "bytes": 1004128,
+    "before": 2145036,
+    "triangles": 34402,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "6d86190920245eedf7e583ca0cebd62261d9829563bb6742780067b588deadcb"
+  },
+  {
+    "file": "whitetail-fawn-lod1.glb",
+    "bytes": 119944,
+    "before": 295328,
+    "triangles": 7420,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "773574a75b903ee0aedecbb9dd53c93f836ef2549ea59fe138617cb4023b776f"
+  },
+  {
+    "file": "whitetail-fawn.glb",
+    "bytes": 757824,
+    "before": 1584832,
+    "triangles": 24738,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "6187b82d73f2d55676be716d8b7016bee20a74b643fd3f7bbebc0809eb227348"
+  },
+  {
+    "file": "whitetail-lod1.glb",
+    "bytes": 151540,
+    "before": 386596,
+    "triangles": 10390,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "6218d97d8e382379eac757603e3b469813009061e604aa49235be04bdfa16cf5"
+  },
+  {
+    "file": "whitetail.glb",
+    "bytes": 998992,
+    "before": 2141104,
+    "triangles": 34638,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "11e1f15ac2e32da6e59945fc75007eb3f84472b30dd705d811ec5e45ad958e5d"
+  },
+  {
+    "file": "yak-fawn-lod1.glb",
+    "bytes": 169884,
+    "before": 430668,
+    "triangles": 11614,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "535ec30481dad812a6016357919d9c760538a7ef645c85ffae81c8f54ba77da9"
+  },
+  {
+    "file": "yak-fawn.glb",
+    "bytes": 1067200,
+    "before": 2308168,
+    "triangles": 38714,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "beda1d49a105b2497c0e5a8dff546d8ff145267cd25a1bcfeb19405b8d2417de"
+  },
+  {
+    "file": "yak-lod1.glb",
+    "bytes": 203364,
+    "before": 523564,
+    "triangles": 14323,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "b39543bbb0d05fd0baee07f4c367f4c99d964f39bc355ffa3003c7e06840f58b"
+  },
+  {
+    "file": "yak.glb",
+    "bytes": 1303260,
+    "before": 2835504,
+    "triangles": 47746,
+    "skins": 1,
+    "joints": 29,
+    "clips": [
+      "Quiet breathing"
+    ],
+    "sha256": "a9f756698efcfb934100760e34c36bce6bc89736cd6b696e929fb0c20743547e"
+  }
+]

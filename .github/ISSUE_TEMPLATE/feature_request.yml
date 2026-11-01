@@ -1,0 +1,27 @@
+name: Feature idea
+description: A new thing to do in the world, or a better way to personalize it.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: The idea
+      description: What would the player do, see or feel? For personalization, what would someone want to change?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it fits
+      description: The world is calm, grounded and meant to be personal. How does this belong in it?
+  - type: textarea
+    id: how
+    attributes:
+      label: How it might work (optional)
+      description: Ideas for the implementation, assets it would need (and their licences), or similar things in other games.
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Contributing
+      options:
+        - label: I'd like to work on this myself.

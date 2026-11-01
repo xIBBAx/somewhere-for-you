@@ -1,0 +1,64 @@
+{
+  "comment": "Pinned authoring toolchain for asset-pipeline/setup/bootstrap-authoring-tools.sh (Linux x86_64).",
+  "blender": {
+    "version": "5.2.2",
+    "url": "https://download.blender.org/release/Blender5.2/blender-5.2.2-linux-x64.tar.xz",
+    "sha256": "84098912789dc450e95697c4184fb8a90acbe5111c2ba4aede3fecb57806a168"
+  },
+  "mpfb": {
+    "version": "2.0.17",
+    "url": "https://extensions.blender.org/download/sha256:4f0a879d64a39bf646fbf5f53601ac678855da329d650617dca5737548239a87/add-on-mpfb-v2.0.17.zip",
+    "sha256": "4f0a879d64a39bf646fbf5f53601ac678855da329d650617dca5737548239a87",
+    "packs": {
+      "makehuman_system_assets_cc0": "https://files2.makehumancommunity.org/asset_packs/makehuman_system_assets/makehuman_system_assets_cc0.zip",
+      "faceunits01": "https://files2.makehumancommunity.org/functional/faceunits01.zip",
+      "glasses01_cc0": "https://files2.makehumancommunity.org/asset_packs/glasses01/glasses01_cc0.zip",
+      "jewelry01_cc0": "https://files2.makehumancommunity.org/asset_packs/jewelry01/jewelry01_cc0.zip",
+      "hats01_cc0": "https://files2.makehumancommunity.org/asset_packs/hats01/hats01_cc0.zip"
+    },
+    "observed_sha256": {
+      "makehuman_system_assets_cc0": "b542127a8e25547c7c29c19f2d1d2adb9a664c80396ecd694095dbc8028a0107",
+      "faceunits01": "d113107bd7eb59f3af4df6fc0ec29bfcc593f496d0b336aec14f086a80ce7146",
+      "glasses01_cc0": "f215c58e09e31b7ee568c814067cb47704cee6da1f6fc01cffb8e9fca37bafdd",
+      "jewelry01_cc0": "46673f27a65f4b9756a823313d487a220a04dd366df704dc3bd4eeba3fc6cb40",
+      "hats01_cc0": "97b70d7bd90e74ee87a49faeb7c4a1b2762b311902974db575851daaae05b50e"
+    }
+  },
+  "freecad": {
+    "version": "1.1.4",
+    "url": "https://github.com/FreeCAD/FreeCAD/releases/download/1.1.4/FreeCAD_1.1.4-Linux-x86_64-py311.AppImage",
+    "sha256": "f6dc6ba676e5ac96a565ebc8d657232f94c6158e85b4352141bd1a46f6b43434"
+  },
+  "cadquery": { "version": "2.8.0" },
+  "cq_editor": { "commit": "fd215727b25424df9b69987ece94767b8b327f0f" },
+  "python": {
+    "img_venv": "numpy==2.5.3 pillow==12.3.0 opencv-python-headless==5.0.0.93 scipy==1.18.1 pyloudnorm==0.2.0 soundfile==0.14.0"
+  },
+  "node": {
+    "packages": "@playwright/cli@0.1.22 chrome-devtools-mcp@1.10.1 @gltf-transform/cli@4.5.1 @upstash/context7-mcp@4.2.0 ctx7@0.5.15 rea-agents@6.1.0"
+  },
+  "remotion": {
+    "packages": "remotion@4.0.534 @remotion/cli@4.0.534 @remotion/bundler@4.0.534 @remotion/renderer@4.0.534 react@19.2.0 react-dom@19.2.0"
+  },
+  "blender_mcp": {
+    "version": "2.1.9",
+    "addon_commit": "7a0373ec9199183cb460068c4f96aed9c579fb4f"
+  },
+  "craft": {
+    "photocraft": {
+      "version": "0.5.0",
+      "url": "https://github.com/storytold/photocraft/releases/download/v0.5.0/photocraft-0.5.0-linux-x86_64.tar.gz",
+      "sha256": "e044101b2da5522896e1d8336b81087cbecbf6b78b7685315f58dd4f3dfa4ce0"
+    },
+    "effectcraft": {
+      "version": "0.6.0",
+      "url": "https://github.com/storytold/effectcraft/releases/download/v0.6.0/effectcraft-0.6.0-linux-x86_64.tar.gz",
+      "sha256": "71810719903378cdab32a1fe328f23c874d38cd3d833abb19c6263dd2bad218c"
+    },
+    "designcraft": {
+      "version": "0.4.0",
+      "url": "https://github.com/storytold/designcraft/releases/download/v0.4.0/designcraft-0.4.0-linux-x86_64.tar.gz",
+      "sha256": "4c0b68c0dc62081e455bf8d60dd54f022ff1624359d5e10d06ca2b18d73d4bb3"
+    }
+  }
+}

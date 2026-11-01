@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "recipient": {
+    "name": "Anaya"
+  },
+  "creator": {
+    "name": "Rohan"
+  },
+  "relationship": {
+    "kind": "family",
+    "label": "chhoti behen"
+  },
+  "occasion": {
+    "kind": "raksha-bandhan",
+    "month": 8,
+    "day": 28
+  },
+  "title": {
+    "heading": "",
+    "subtitle": ""
+  },
+  "letter": {
+    "heading": "Namaste",
+    "greeting": "Anaya,",
+    "paragraphs": [
+      "Happy Raksha Bandhan. I made you something you can walk around in.",
+      "There are horses by the lake and a cat who will follow you everywhere. If you find the star-born Pegasus, ask her to take you to the Moon.",
+      "Nine stars are hidden near home. Each one is something of ours."
+    ],
+    "signoff": "— Rohan",
+    "enter": "Chalo"
+  },
+  "memories": [
+    {
+      "title": "The Terrace",
+      "subtitle": "you were seven",
+      "text": "[Replace with your own words about this place.]",
+      "place": "",
+      "date": "",
+      "photos": [
+        {
+          "src": "media:photos/first.jpg",
+          "alt": "Describe the photo for screen readers",
+          "caption": "Spring 2019"
+        }
+      ]
+    },
+    {
+      "title": "The Lake Trip",
+      "subtitle": "the year it rained",
+      "text": "[Replace with your words about this place.]",
+      "place": "",
+      "date": "",
+      "photos": [
+        {
+          "src": "placeholder:lake",
+          "alt": "A still lake with water lilies and reeds"
+        }
+      ]
+    }
+  ],
+  "secrets": [
+    {
+      "title": "Under the Stairs",
+      "text": "[Replace with a small hidden note.]",
+      "photo": {
+        "src": "placeholder:whales",
+        "alt": "Sky whales swimming over the land"
+      }
+    },
+    {
+      "title": "The Blurry One",
+      "text": "[Replace with another small hidden note.]",
+      "photo": null
+    }
+  ],
+  "ending": {
+    "heading": "",
+    "lines": [
+      "That's all nine.",
+      "Happy Raksha Bandhan, Anaya."
+    ],
+    "closing": "Phir milenge.",
+    "photos": [
+      {
+        "src": "placeholder:pegasus",
+        "alt": "A winged horse and rider over a blossoming forest"
+      }
+    ],
+    "fireworksLine": ""
+  },
+  "characters": {
+    "explorer": {
+      "name": "",
+      "preset": "explorer",
+      "model": ""
+    },
+    "companion": {
+      "name": "",
+      "preset": "companion",
+      "model": "",
+      "follows": true,
+      "chatter": "sometimes"
+    }
+  },
+  "creatures": {
+    "starborn": "Ashwini",
+    "explorerPegasus": "Chandni",
+    "companionPegasus": "Megh",
+    "dragon": "Swarna",
+    "cat": "Chikoo",
+    "spaceCats": [
+      "Surya",
+      "Chanda",
+      "Mangal",
+      "Badal",
+      "Jyoti"
+    ]
+  },
+  "places": {
+    "cafeSign": "CHAI",
+    "studioLine": "",
+    "cafeLine": "",
+    "valleyName": "Devdar Valley",
+    "benchName": "The valley bench"
+  },
+  "chatter": {
+    "explorer": [
+      "Dekho, those clouds!",
+      "Race you!"
+    ],
+    "companion": [
+      "Chalo, the lake?",
+      "Chai first, then stars?"
+    ]
+  },
+  "theme": {
+    "accent": "#f2c46d"
+  },
+  "music": {
+    "src": "default",
+    "title": "",
+    "credit": ""
+  },
+  "world": {
+    "home": {
+      "label": "",
+      "latitude": 21.15,
+      "longitude": 79.09
+    },
+    "liveWeather": false
+  }
+}

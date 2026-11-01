@@ -1,0 +1,65 @@
+/* Direct to Planets: a night-sky card over the world, one intentional choice. */
+.pt-scrim { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; background: #050a1666; pointer-events: auto; padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }
+.pt-card { width: min(620px, 100%); max-height: min(86dvh, 760px); display: flex; flex-direction: column; border-radius: 22px; border: 1px solid #b9c8ff40; background: linear-gradient(160deg, #141f3cf5, #0b1226f7 60%, #1c1530f5); color: #eef1ff; box-shadow: 0 18px 70px #0009, inset 0 0 60px #6f86ff14; font: 13px var(--font-body); overflow: hidden; }
+.pt-card header { display: flex; align-items: center; gap: 12px; padding: 18px 20px 12px; }
+.pt-card header > svg { width: 28px; height: 28px; color: #c6d2ff; flex-shrink: 0; }
+.pt-card header small { letter-spacing: .14em; font-size: 10px; opacity: .7; }
+.pt-card h2 { margin: 2px 0 0; font: 22px var(--font-display, var(--font-body)); }
+.pt-close { margin-left: auto; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #ffffff30; background: #ffffff10; color: inherit; display: grid; place-items: center; cursor: pointer; }
+.pt-close svg { width: 18px; height: 18px; }
+.pt-call, .pt-home { margin: 0 16px 10px; padding: 12px 14px; border-radius: 14px; background: #ffffff0f; border: 1px solid #ffffff1f; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.pt-call p { margin: 0; flex: 1 1 220px; opacity: .9; }
+.pt-lists { overflow: auto; padding: 0 16px 8px; overscroll-behavior: contain; }
+.pt-lists h3 { margin: 12px 4px 6px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; opacity: .65; }
+.pt-lists ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.pt-lists li { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 12px; background: #ffffff08; }
+.pt-lists li.is-here { outline: 1px solid #9fb4ff66; }
+.pt-lists li.is-selected, .pt-home.is-selected { outline: 1px solid #ffd79a; background: #ffd79a12; }
+.pt-name { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; }
+.pt-name b { font-size: 14px; font-weight: 600; }
+.pt-name small { font-size: 11px; opacity: .7; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pt-go { display: flex; gap: 6px; flex-shrink: 0; }
+.pt-card button:not(.pt-close) { min-height: 40px; display: inline-flex; align-items: center; gap: 6px; padding: 0 12px; border-radius: 999px; border: 1px solid #c8d4ff4d; background: #9fb2ff1f; color: inherit; font: 12px var(--font-body); cursor: pointer; }
+.pt-card button:not(.pt-close):hover:not(:disabled) { background: #b8c6ff3a; }
+.pt-card button:disabled { opacity: .4; cursor: default; }
+.pt-card button svg { width: 15px; height: 15px; }
+.pt-card kbd { font-size: 10px; opacity: .7; border: 1px solid #ffffff40; border-radius: 4px; padding: 0 4px; }
+.pt-card button:focus-visible { outline: 2px solid #ffd79a; outline-offset: 2px; }
+.pt-card footer { padding: 10px 20px 16px; font-size: 11px; opacity: .65; }
+@media (max-width: 560px), (max-height: 460px) {
+  .pt-go span, .pt-go kbd { display: none; }
+  /* icon over a one-word label, so the two choices are never a guess */
+  .pt-go button:not(.pt-close) { flex-direction: column; gap: 1px; padding: 4px 8px; min-width: 52px; min-height: 46px; justify-content: center; border-radius: 14px; }
+  .pt-go button::after { content: attr(data-short); font-size: 10px; line-height: 1.1; opacity: .85; }
+  .pt-card button:not(.pt-close) { min-height: 44px; justify-content: center; }
+  .pt-name small { white-space: normal; }
+  .pt-card header { padding: 12px 14px 8px; }
+  .pt-card h2 { font-size: 18px; }
+}
+/* a phone on its side: the list gets the room */
+@media (max-height: 460px) {
+  .pt-card { max-height: 96dvh; }
+  .pt-card footer, .pt-call p, .pt-card header small { display: none; }
+  .pt-call { padding-top: 4px; padding-bottom: 4px; }
+}
+@media (prefers-reduced-motion: no-preference) { .pt-card { animation: pt-in .22s ease-out; } }
+@keyframes pt-in { from { opacity: 0; transform: translateY(8px) scale(.985); } }
+
+/* what can be done there: a small, quiet tag beside the name */
+.pt-kind {
+  margin-left: 8px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-style: normal;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  vertical-align: 2px;
+  color: rgba(214, 226, 255, 0.82);
+  background: rgba(150, 175, 255, 0.14);
+  white-space: nowrap;
+}
+.pt-kind.is-land {
+  color: #fff4d6;
+  background: rgba(255, 210, 122, 0.22);
+}

@@ -1,0 +1,131 @@
+{
+  "id": "explorer",
+  "label": "Explorer",
+  "description": "Default playable character: a young South Asian woman in deep-teal canvas dungarees over a cream tee, black boots, a long braid.",
+  "seed": 3101,
+  "height": 1.67,
+  "macro": {
+    "gender": 0.0,
+    "age": 0.46,
+    "muscle": 0.56,
+    "weight": 0.46,
+    "proportions": 0.64,
+    "height": 0.52,
+    "cupsize": 0.45,
+    "firmness": 0.55,
+    "race": {
+      "caucasian": 0.48,
+      "asian": 0.27,
+      "african": 0.25
+    }
+  },
+  "detail": [
+    [
+      "head",
+      "head-oval",
+      0.3
+    ],
+    [
+      "cheek",
+      "l-cheek-bones-incr",
+      0.3
+    ],
+    [
+      "cheek",
+      "r-cheek-bones-incr",
+      0.3
+    ],
+    [
+      "eyes",
+      "l-eye-scale-incr",
+      0.15
+    ],
+    [
+      "eyes",
+      "r-eye-scale-incr",
+      0.15
+    ],
+    [
+      "mouth",
+      "mouth-cupidsbow-incr",
+      0.25
+    ],
+    [
+      "chin",
+      "chin-triangle",
+      0.2
+    ],
+    [
+      "eyebrows",
+      "eyebrows-angle-up",
+      0.2
+    ],
+    [
+      "mouth",
+      "mouth-angles-up",
+      0.22
+    ]
+  ],
+  "skin": "young_asian_female",
+  "tone": [
+    150,
+    104,
+    78
+  ],
+  "eyes": "brown",
+  "eyebrows": "eyebrow010",
+  "eyelashes": "eyelashes03",
+  "hair": "braid01",
+  "hairTint": [
+    22,
+    18,
+    16
+  ],
+  "outfit": "male_worksuit01",
+  "outfitColors": {
+    "all": [
+      {
+        "from": [
+          101,
+          145,
+          208
+        ],
+        "to": [
+          34,
+          98,
+          102
+        ],
+        "radius": 0.28
+      },
+      {
+        "from": [
+          57,
+          70,
+          98
+        ],
+        "to": [
+          20,
+          56,
+          60
+        ],
+        "radius": 0.16
+      },
+      {
+        "from": [
+          245,
+          246,
+          247
+        ],
+        "to": [
+          236,
+          222,
+          196
+        ],
+        "radius": 0.22
+      }
+    ]
+  },
+  "shoes": "shoes03",
+  "shoeColors": {},
+  "hemSway": 0.3
+}
