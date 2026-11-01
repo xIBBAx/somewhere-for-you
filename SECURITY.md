@@ -44,7 +44,7 @@ large but valid worlds into your own browser, and issues in third-party hosts.
 - The production build ships no debug tools, no source maps, and works under
   the strict Content Security Policy in
   [`tools/vite/securityHeaders.ts`](tools/vite/securityHeaders.ts).
-- Dependencies are pinned in `package-lock.json` and watched by Dependabot;
+- Dependencies are pinned in `package-lock.json` and checked for security updates;
   CI runs with read-only permissions and pinned actions.
 
 ---
