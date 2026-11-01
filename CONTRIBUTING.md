@@ -1,5 +1,8 @@
 # Contributing
 
+<p align="center"><img src="docs/media/scenes/dragon-ride.webp" alt="Two riders on a golden dragon flying over land" width="560" /></p>
+<p align="center"><img src="docs/media/scenes/whales.webp" alt="A winged horse flying alongside a pod of sky whales" width="560" /></p>
+
 Thank you for helping. This is a playable game and a template people use to
 make something personal, so changes are judged on both: does the world still
 play well, and is it still easy and safe to personalize?
@@ -7,7 +10,7 @@ play well, and is it still easy and safe to personalize?
 ## Set up
 
 ```bash
-git clone <this repository URL> somewhere-for-you
+git clone https://github.com/xIBBAx/somewhere-for-you.git
 cd somewhere-for-you
 npm ci
 npm run dev          # http://localhost:5173 (add ?debug for QA tools)
@@ -96,3 +99,7 @@ content. `.gitignore` covers the usual places; check `git status` anyway.
 By contributing you agree that your contribution is licensed under the
 project's [MIT License](LICENSE) (and, for assets, the licence you declare in
 `ASSET_LICENSES.md`).
+
+---
+
+<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

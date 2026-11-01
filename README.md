@@ -6,8 +6,11 @@ their name on the letter that opens it, your memories at nine places around home
 and a sky full of stars to ride out into.
 </p>
 
+<p align="center"><strong>Created by Ibrahim Sultan</strong></p>
+
 <p align="center">
-<img src="docs/images/hero.jpg" alt="The explorer at home at night: a rangoli ringed with lit diyas, flame-red gulmohar trees and a chai stall beyond" width="880" />
+<a href="docs/media/somewhere-for-you-trailer-720p.mp4"><img src="docs/media/poster.jpg" alt="Somewhere, For You: the trailer. The explorer at home at night, a rangoli ringed with lit diyas under a starry sky." width="880" /></a><br/>
+<a href="docs/media/somewhere-for-you-trailer-720p.mp4"><strong>▶ Watch the trailer</strong></a> (real gameplay, captured from the running game)
 </p>
 
 It is two things at once:
@@ -15,9 +18,9 @@ It is two things at once:
 - **A game you can play right now.** Walk, ride, fly and sail through an endless landscape, from meadows and lakes to a mountain valley, the Moon and the planets. It works out of the box with a complete demo world.
 - **A starting point for a gift.** Give it to a partner, a friend, a parent or a sibling: change the names, write the letter, put your photos at the memory places, pick or import the characters and choose the music. You can do it in the browser without code, or in a config file if you build it yourself.
 
-> **Status:** a complete, playable desktop web game (version 1.0.0). It is
-> built and tested in Chromium-based desktop browsers. Phones and tablets are
-> not supported. See [Browser support](#browser-support).
+> **Status:** playable from start to finish on a desktop browser, and still a work in progress. It is
+> tested in Chromium. Phones and tablets are not supported. See [Project status](#project-status)
+> for what works, what is experimental and what is next.
 
 ## Contents
 
@@ -26,6 +29,7 @@ It is two things at once:
 - [Make it for someone](#make-it-for-someone)
 - [Controls](#controls)
 - [Built with](#built-with)
+- [Project status](#project-status)
 - [Browser support](#browser-support)
 - [Documentation](#documentation)
 - [Contributing](#contributing)
@@ -36,8 +40,12 @@ It is two things at once:
 
 | | |
 |---|---|
-| <img src="docs/images/explore.jpg" alt="The pond with water lilies, a gulmohar tree, a peacock and the mela beyond" width="420" /> | <img src="docs/images/flight.jpg" alt="A winged horse and rider flying over a gulmohar forest beside sky whales" width="420" /> |
-| <img src="docs/images/night.jpg" alt="Home at dusk with diyas lit along the path and the chai stall ahead" width="420" /> | <img src="docs/images/space.jpg" alt="A winged horse in space beside the rings of Saturn, the Milky Way overhead" width="420" /> |
+| <img src="docs/media/scenes/takeoff.webp" alt="A winged horse leaping into the sky past a golden dragon, kites and sky whales" width="420" /><br/><sub>Taking off on the star-born Pegasus</sub> | <img src="docs/media/scenes/peacock.webp" alt="A peacock with its train fanned out in a meadow under gulmohar trees" width="420" /><br/><sub>Peacocks fan their trains when you come close</sub> |
+| <img src="docs/media/scenes/mela-dragon.webp" alt="A golden dragon flying over a ferris wheel at dusk" width="420" /><br/><sub>The mela at dusk, with the dragon passing over</sub> | <img src="docs/media/scenes/fireworks.webp" alt="Fireworks over a marigold gate at night, the Moon and sky whales above" width="420" /><br/><sub>Fireworks over the garden gate</sub> |
+| <img src="docs/media/scenes/valley-flight.webp" alt="A winged horse flying through a Himalayan valley above a forest and a river" width="420" /><br/><sub>Flying through the mountain valley</sub> | <img src="docs/media/scenes/golden-rush.webp" alt="A golden dragon surging through clouds with a burst of light" width="420" /><br/><sub>The dragon's golden rush</sub> |
+| <img src="docs/media/scenes/gallop.webp" alt="A rider galloping a chestnut horse across open meadow" width="420" /><br/><sub>Seven horse breeds to ride</sub> | <img src="docs/media/scenes/rainbow-kites.webp" alt="Patang kites and a rainbow over the home meadow after rain" width="420" /><br/><sub>Kites and a rainbow after the rain</sub> |
+| <img src="docs/media/scenes/snow.webp" alt="Snow on the home meadow with flame-red gulmohar trees" width="420" /><br/><sub>Weather changes: here, snow on the meadow</sub> | <img src="docs/media/scenes/warp.webp" alt="A winged horse in a star corridor bursting out beside the Moon" width="420" /><br/><sub>The star corridor opening onto the Moon</sub> |
+| <img src="docs/media/scenes/earth.webp" alt="Earth seen from orbit with swirling clouds" width="420" /><br/><sub>Earth from orbit</sub> | <img src="docs/media/scenes/saturn.webp" alt="Saturn and its rings against the Milky Way" width="420" /><br/><sub>Saturn's rings</sub> |
 
 - **Rooted in India.** Flame-red gulmohar trees, clay diyas that light up along the path at dusk and go out in the rain, rangoli at the thresholds, marigold torans on the gateways, patang kites on dry days, peacocks that fan their trains when you come close, a chai stall, a mela, and the first rain of the monsoon. The demo's people, animals and memory places have Indian names, home on the globe is the centre of India, a Himalayan valley waits to the north, and the Moon has the Chandrayaan landing sites. The occasion can be Diwali, Holi, Eid, Christmas, Navratri, Onam, Pongal, Baisakhi, Raksha Bandhan or Gurpurab as well as a birthday or anniversary. All of it can be changed. Two things are not Indian yet: the default music is a CC0 lo-fi track (bring your own raga or bansuri piece in the Personalize screen), and the default characters wear modern clothes rather than traditional dress, because no suitably licensed rigged outfits were available.
 - **An endless landscape** streamed around you as you go: forests, meadows, lakes and rivers, and a high Himalayan-style valley with a village. Weather changes from sun to showers, storms, mist and snow, and a real star catalogue fills the night sky.
@@ -53,7 +61,7 @@ It is two things at once:
 You need [Node.js](https://nodejs.org/) 20.19+ or 22.12+ and Git.
 
 ```bash
-git clone <this repository URL> somewhere-for-you
+git clone https://github.com/xIBBAx/somewhere-for-you.git
 cd somewhere-for-you
 npm ci
 npm run dev
@@ -128,6 +136,20 @@ All models are glTF binary (`.glb`). There is no backend, no account, no analyti
 
 It is a demanding 3D scene: a dedicated graphics card is recommended. Measured on the production build with a GTX 1660 Ti, Chromium under WSLg and auto quality, standing at home: about 32 fps at 1280×800 and about 27 fps at 1920×1080. If it runs slowly, choose **Balanced** or **Light** in the HUD's quality menu. A computer without a working graphics card falls back to software rendering, which is very slow; the game tells you when that happens. More in [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md#performance-and-troubleshooting).
 
+## Project status
+
+It isn't perfect and it isn't finished. Here is where it honestly stands.
+
+| | |
+|---|---|
+| **Working, played and tested** | Walking, running and jumping · horses · the three winged horses and the dragon · the home region, the wider world and the mountain valley · weather, day and night · the journey to the Moon, the planets and back · the companion and shared moments · photo mode, journal, world map and fast travel · the Personalize screen, including photos, export, import and deleting everything |
+| **Experimental** | Your own rigged 3D character: the upload check is tested, but playing through the whole game with one has not been · live weather (optional, off by default) |
+| **Not tested yet** | Firefox, Safari, and native Windows Chrome or Edge (the same engine as the tested Chromium build) |
+| **Known rough edges** | Hand and foot placement on slopes and on saddles can be about 14 cm off · frame rate is demanding on mid-range graphics cards · water contact and animal behaviour have automated tests but deserve more real play · memory use over very long sessions has not been measured |
+| **Next** | Traditional clothing and a soundtrack rooted in Indian classical music, both of which need properly licensed assets · better foot placement · a lighter first load |
+
+See the [open issues](https://github.com/xIBBAx/somewhere-for-you/issues). Contributions from developers, designers, 3D artists and animators are welcome, and so is simply cloning it and making it your own.
+
 ## Documentation
 
 | | |
@@ -146,8 +168,14 @@ Bug reports, fixes and new ideas are welcome. Start with [CONTRIBUTING.md](CONTR
 
 ## How this was made
 
-This project was designed and directed by a person and built over many iterations with AI coding assistants doing much of the implementation, among them OpenAI Codex models, Anthropic's Claude Sonnet and Claude Opus (Claude Opus 5.5 carried much of the later refinement), Google's Gemini through Antigravity, GLM and DeepSeek models, together with agent tooling for the browser and Blender. Every change was reviewed and tested in the running game; the tests in this repository are the evidence that it works, not the tools that wrote it.
+**Somewhere, For You was created by Ibrahim Sultan.** I came up with the idea and built it over many long iterations, directing, playing, testing and revising every part of it, using LLMs, coding agents, agent skills, plugins, MCP servers, browser automation and Blender tooling.
+
+The models and agents involved include OpenAI Codex, Anthropic's Claude Sonnet and Claude Opus (Claude Opus 5.5 handled much of the later refinement and integration), Google's Gemini through Antigravity, GLM and DeepSeek. They wrote a great deal of the code. The decisions, the taste and the testing were mine, and the tests in this repository are the evidence that it works, not the tools that wrote it.
 
 ## License
 
 The code and the project's own models, textures and artwork are released under the [MIT License](LICENSE). Some bundled third-party assets have their own licences (most are CC0 or public domain; the planet textures are CC BY 4.0 and the star catalogue is CC BY-SA 4.0). They are listed with their required credits in [ASSET_LICENSES.md](ASSET_LICENSES.md).
+
+---
+
+<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

@@ -1,5 +1,8 @@
 # Development
 
+<p align="center"><img src="media/scenes/rain.webp" alt="A heavy cloudburst soaking the home meadow" width="560" /></p>
+<p align="center"><img src="media/scenes/dash.webp" alt="A winged horse dashing away with a long trail behind it past a whale" width="560" /></p>
+
 ## Requirements
 
 - Node.js 20.19+ or 22.12+ (what Vite 8 needs) and npm.
@@ -105,3 +108,7 @@ tests/          unit tests; tests/e2e/ browser tests
 tools/          Vite plugins and the QA browser driver
 docs/           guides
 ```
+
+---
+
+<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

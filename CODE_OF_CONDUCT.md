@@ -1,5 +1,7 @@
 # Code of Conduct
 
+<p align="center"><img src="docs/media/scenes/hands.webp" alt="Two characters walking together hand in hand at dusk" width="560" /></p>
+
 This project adopts the [Contributor Covenant, version 2.1](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)
 as its code of conduct. In short:
 
@@ -24,3 +26,7 @@ vulnerability**, starting the title with "Conduct:"), or use GitHub's
 maintainers and handled confidentially. Maintainers may edit or remove
 content and warn, suspend or ban participants, following the enforcement
 guidelines of the Contributor Covenant.
+
+---
+
+<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

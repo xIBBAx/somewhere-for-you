@@ -1,5 +1,8 @@
 # Architecture
 
+<p align="center"><img src="media/scenes/valley.webp" alt="A wide view of the mountain valley with village, forest and river" width="620" /><br/><em>Everything out to the horizon is streamed around the player</em></p>
+<p align="center"><img src="media/scenes/atmosphere.webp" alt="A winged horse above the edge of the atmosphere, the Milky Way overhead" width="620" /></p>
+
 A single-page web app: React renders the interface and a React Three Fiber
 canvas, and almost everything that moves is plain TypeScript running in the
 render loop. There is no server. This page is a map: the header comment of
@@ -121,3 +124,7 @@ and nothing in the game uses text as HTML.
 - The production bundle is one large script (about 3.5 MB, 1.2 MB gzipped)
   plus the worker scripts; code-splitting the space and valley systems is an
   open improvement.
+
+---
+
+<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

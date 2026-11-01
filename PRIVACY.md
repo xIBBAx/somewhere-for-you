@@ -1,5 +1,7 @@
 # Privacy
 
+<p align="center"><img src="docs/media/scenes/diyas-dusk.webp" alt="The explorer walking along a path lit by diyas at dusk" width="560" /></p>
+
 This game runs entirely in your browser. It has no server, no accounts, no
 analytics, no advertising and no tracking. This page lists everything it
 stores and the one thing it can send over the network.
@@ -68,3 +70,7 @@ If you host a copy, your host may log requests (IP addresses, times, pages) as
 any web server does. The project adds nothing to that. The security headers
 recommended in [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) also stop the page
 from sending a referrer to other sites.
+
+---
+
+<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

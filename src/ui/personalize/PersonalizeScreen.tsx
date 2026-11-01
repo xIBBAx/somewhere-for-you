@@ -69,6 +69,25 @@ const Field = ({ label, value, onChange, max, multiline, hint, placeholder }: {
   </label>
 )
 
+/**
+ * A text box holding a list. What is typed stays as typed (spaces, blank lines)
+ * while the parsed list goes to the draft; it only follows the draft when the
+ * list changes from outside, such as an import.
+ */
+const ListField = ({ items, separator, parse, onItems, ...field }: {
+  items: string[]; separator: string; parse: (text: string) => string[]; onItems: (items: string[]) => void
+  label: string; max: number; multiline?: boolean; hint?: string
+}): React.ReactElement => {
+  const joined = items.join(separator)
+  const [text, setText] = useState(joined)
+  const [seen, setSeen] = useState(joined)
+  if (seen !== joined) {
+    setSeen(joined)
+    if (parse(text).join(separator) !== joined) setText(joined)
+  }
+  return <Field {...field} value={text} onChange={(v) => { setText(v); onItems(parse(v)) }} />
+}
+
 const PhotoList = ({ photos, max, onChange, local, want, busy, setBusy, report }: {
   photos: PhotoRef[]; max: number; onChange: (p: PhotoRef[]) => void
   local: Map<string, string>; want: (id: string) => void
@@ -167,18 +186,21 @@ const PersonalizeDialog = ({ close }: { close: () => void }): React.ReactElement
   const update = (fn: (g: GiftConfig) => void): void => setDraft((d) => { const n = structuredClone(d); fn(n); return n })
   const warnings = useMemo(() => personalizationWarnings(), [])
 
+  // the latest close, so a parent re-render never moves focus out of a field being typed in
+  const closeRef = useRef(close)
+  useEffect(() => { closeRef.current = close })
   useEffect(() => {
     resetInputControls()
     const el = dialog.current
     el?.querySelector<HTMLElement>("button, input, select, textarea")?.focus({ preventScroll: true })
     const onKey = (e: KeyboardEvent): void => {
-      if (e.key === "Escape") { e.preventDefault(); close() }
+      if (e.key === "Escape") { e.preventDefault(); closeRef.current() }
       // keep the world's keys out of the form
       e.stopPropagation()
     }
     el?.addEventListener("keydown", onKey)
     return () => el?.removeEventListener("keydown", onKey)
-  }, [close])
+  }, [])
 
   const save = async (): Promise<void> => {
     setBusy(true)
@@ -334,9 +356,10 @@ const PersonalizeDialog = ({ close }: { close: () => void }): React.ReactElement
               <div>
                 <Field label="Heading" value={draft.letter.heading} max={LIMITS.short} onChange={(v) => update((g) => { g.letter.heading = v })} />
                 <Field label="Greeting" value={draft.letter.greeting} max={LIMITS.short} onChange={(v) => update((g) => { g.letter.greeting = v })} />
-                <Field label="The letter" multiline value={draft.letter.paragraphs.join("\n\n")} max={LIMITS.paragraph * LIMITS.paragraphs}
+                <ListField label="The letter" multiline items={draft.letter.paragraphs} separator={"\n\n"} max={LIMITS.paragraph * LIMITS.paragraphs}
                   hint="Leave an empty line between paragraphs."
-                  onChange={(v) => update((g) => { g.letter.paragraphs = v.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean).slice(0, LIMITS.paragraphs) })} />
+                  parse={(v) => v.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean).slice(0, LIMITS.paragraphs)}
+                  onItems={(items) => update((g) => { g.letter.paragraphs = items })} />
                 <Field label="Sign-off" value={draft.letter.signoff} max={LIMITS.short} onChange={(v) => update((g) => { g.letter.signoff = v })} />
                 <Field label="Button" value={draft.letter.enter} max={LIMITS.name} onChange={(v) => update((g) => { g.letter.enter = v })} />
               </div>
@@ -368,8 +391,9 @@ const PersonalizeDialog = ({ close }: { close: () => void }): React.ReactElement
           {tab === "ending" && (
             <section className="pz-grid">
               <Field label="Closing card heading" value={draft.ending.heading} max={LIMITS.short} placeholder={`For ${draft.recipient.name}`} onChange={(v) => update((g) => { g.ending.heading = v })} />
-              <Field label="Closing card words" multiline value={draft.ending.lines.join("\n")} max={LIMITS.line * LIMITS.lines} hint="One line per row."
-                onChange={(v) => update((g) => { g.ending.lines = v.split("\n").map((l) => l.trim()).filter(Boolean).slice(0, LIMITS.lines) })} />
+              <ListField label="Closing card words" multiline items={draft.ending.lines} separator={"\n"} max={LIMITS.line * LIMITS.lines} hint="One line per row."
+                parse={(v) => v.split("\n").map((l) => l.trim()).filter(Boolean).slice(0, LIMITS.lines)}
+                onItems={(items) => update((g) => { g.ending.lines = items })} />
               <Field label="The last line" value={draft.ending.closing} max={LIMITS.line} onChange={(v) => update((g) => { g.ending.closing = v })} />
               <Field label="When the fireworks start (optional)" value={draft.ending.fireworksLine} max={LIMITS.line} placeholder="Look up." onChange={(v) => update((g) => { g.ending.fireworksLine = v })} />
               <div className="pz-field pz-wide">
@@ -428,10 +452,12 @@ const PersonalizeDialog = ({ close }: { close: () => void }): React.ReactElement
                 </div>
               ))}
               <p className="pz-note pz-wide">A custom model must be a rigged humanoid with the game's skeleton (docs/CHARACTER_ASSETS.md). Photos are never turned into 3D models: a picture of someone stays a picture.</p>
-              <Field label="Things the explorer says" multiline value={draft.chatter.explorer.join("\n")} max={LIMITS.short * LIMITS.chatter} hint="One line per row."
-                onChange={(v) => update((g) => { g.chatter.explorer = v.split("\n").map((l) => l.trim()).filter(Boolean).slice(0, LIMITS.chatter) })} />
-              <Field label="Things the companion says" multiline value={draft.chatter.companion.join("\n")} max={LIMITS.short * LIMITS.chatter} hint="One line per row."
-                onChange={(v) => update((g) => { g.chatter.companion = v.split("\n").map((l) => l.trim()).filter(Boolean).slice(0, LIMITS.chatter) })} />
+              <ListField label="Things the explorer says" multiline items={draft.chatter.explorer} separator={"\n"} max={LIMITS.short * LIMITS.chatter} hint="One line per row."
+                parse={(v) => v.split("\n").map((l) => l.trim()).filter(Boolean).slice(0, LIMITS.chatter)}
+                onItems={(items) => update((g) => { g.chatter.explorer = items })} />
+              <ListField label="Things the companion says" multiline items={draft.chatter.companion} separator={"\n"} max={LIMITS.short * LIMITS.chatter} hint="One line per row."
+                parse={(v) => v.split("\n").map((l) => l.trim()).filter(Boolean).slice(0, LIMITS.chatter)}
+                onItems={(items) => update((g) => { g.chatter.companion = items })} />
             </section>
           )}
           {tab === "world" && (
@@ -441,8 +467,9 @@ const PersonalizeDialog = ({ close }: { close: () => void }): React.ReactElement
               <Field label="The companion's Pegasus" value={draft.creatures.companionPegasus} max={LIMITS.name} onChange={(v) => update((g) => { g.creatures.companionPegasus = v })} />
               <Field label="The golden dragon" value={draft.creatures.dragon} max={LIMITS.name} onChange={(v) => update((g) => { g.creatures.dragon = v })} />
               <Field label="The cat" value={draft.creatures.cat} max={LIMITS.name} onChange={(v) => update((g) => { g.creatures.cat = v })} />
-              <Field label="The space cats (captain first, commas between)" value={draft.creatures.spaceCats.join(", ")} max={LIMITS.name * 5}
-                onChange={(v) => update((g) => { const n = v.split(",").map((x) => x.trim()); g.creatures.spaceCats = g.creatures.spaceCats.map((d, i) => n[i] || d) as GiftConfig["creatures"]["spaceCats"] })} />
+              <ListField label="The space cats (captain first, commas between)" items={[...draft.creatures.spaceCats]} separator=", " max={LIMITS.name * 5}
+                parse={(v) => { const n = v.split(",").map((x) => x.trim()); return draft.creatures.spaceCats.map((d, i) => n[i] || d) }}
+                  onItems={(items) => update((g) => { g.creatures.spaceCats = items as GiftConfig["creatures"]["spaceCats"] })} />
               <Field label="The mountain valley" value={draft.places.valleyName} max={LIMITS.name} onChange={(v) => update((g) => { g.places.valleyName = v })} />
               <Field label="The bench above the valley" value={draft.places.benchName} max={LIMITS.name} onChange={(v) => update((g) => { g.places.benchName = v })} />
               <Field label="Café sign" value={draft.places.cafeSign} max={16} onChange={(v) => update((g) => { g.places.cafeSign = v })} />

@@ -1,5 +1,8 @@
 # Character assets
 
+<p align="center"><img src="media/scenes/dance.webp" alt="The two default characters in a slow dance at dusk" width="560" /></p>
+<p align="center"><img src="media/scenes/high-five.webp" alt="The two characters giving each other a high five, petals in the air" width="560" /></p>
+
 The two people in the world, the explorer and the companion, share one
 skeleton and one animator. Nothing is pre-animated: walking, running,
 swimming, riding, flying, gestures, expressions and gaze are all posed in
@@ -102,3 +105,7 @@ world publicly. Mixamo characters and animations, and most marketplace models,
 must not be committed to a public repository. See
 [ASSET_LICENSES.md](../ASSET_LICENSES.md) and
 [CONTRIBUTING.md](../CONTRIBUTING.md#assets).
+
+---
+
+<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

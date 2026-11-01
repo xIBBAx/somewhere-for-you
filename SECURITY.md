@@ -1,5 +1,7 @@
 # Security policy
 
+<p align="center"><img src="docs/media/scenes/home-crane.webp" alt="The camera rising over home at dusk, the mela and paths below" width="560" /></p>
+
 ## Supported versions
 
 Security fixes are made on the `main` branch and in the latest release.
@@ -44,3 +46,7 @@ large but valid worlds into your own browser, and issues in third-party hosts.
   [`tools/vite/securityHeaders.ts`](tools/vite/securityHeaders.ts).
 - Dependencies are pinned in `package-lock.json` and watched by Dependabot;
   CI runs with read-only permissions and pinned actions.
+
+---
+
+<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

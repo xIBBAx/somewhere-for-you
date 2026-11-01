@@ -1,5 +1,7 @@
 # Putting your world online
 
+<p align="center"><img src="media/scenes/moon-skim.webp" alt="A winged horse skimming low over the cratered surface of the Moon" width="600" /></p>
+
 `npm run build` produces `dist/`: plain static files. Any static host serves
 them: GitHub Pages, Netlify, Cloudflare Pages, Vercel, an S3 bucket, or your
 own server. There is no backend to run.
@@ -65,3 +67,7 @@ above simply isn't enforced. Build with the right `base` for
 `dist/` is about 110 MB, with the largest single file under 5 MB, so it fits
 the free tiers of the hosts above. Hosts with a per-file limit around 25 MB
 are fine.
+
+---
+
+<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

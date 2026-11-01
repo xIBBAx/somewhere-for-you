@@ -1,5 +1,7 @@
 # Asset licenses
 
+<p align="center"><img src="docs/media/scenes/chandrayaan.webp" alt="The Chandrayaan-3 lander and rover tracks on the Moon, the Milky Way behind" width="600" /><br/><em>Real places, real textures: every source is listed below</em></p>
+
 The code is MIT-licensed ([LICENSE](LICENSE)). This file covers everything
 else that ships in the repository: models, textures, data, fonts and music.
 Every third-party file was checked against its source; where a licence asks
@@ -30,6 +32,8 @@ game itself, and released under the project's [MIT License](LICENSE).
 The only music-like sound made in code is the optional generative track in
 `src/game/audio/lofi.ts`; the game ships with the recorded track below and no
 sound effects.
+| `docs/media/poster.jpg`, `docs/media/scenes/*`, `docs/images/*` | captured from this game |
+| `docs/media/somewhere-for-you-trailer-720p.mp4` | captured from this game; its music is listed under third-party assets |
 
 ## Characters: MakeHuman / MPFB (CC0)
 
@@ -47,6 +51,7 @@ recoloured. MPFB itself (GPL) is an authoring tool and is not included.
 | Files | Source | Licence | Credit |
 |---|---|---|---|
 | `public/assets/audio/first-snow.mp3` | "First Snow" by **Holizna**, *Lo-Fi and Chill* collection, [OpenGameArt](https://opengameart.org/content/lo-fi-and-chill-collection). Re-encoded at 160 kbps, level lowered 1.5 dB. | CC0 1.0 | not required; with thanks |
+| Music in the trailer only (`docs/media/somewhere-for-you-trailer-720p.mp4`) | "First Snow" by **Holizna** and "Flags" by **Alexander Ehlers**, [Free Music Pack](https://opengameart.org/content/free-music-pack) on OpenGameArt | CC0 1.0 | not required; with thanks |
 | `public/assets/dragon/dragon.glb` | "Flying Dragon" by **peaznchips**, [OpenGameArt](https://opengameart.org/content/flying-dragon). Re-materialled and optimised; its roughness map (from another asset) was dropped. | CC0 1.0 | not required |
 | `public/assets/skywhales/whale.glb` | "Whale" by **Quaternius** ([quaternius.com](https://quaternius.com/)) | CC0 1.0 | not required |
 | `asset-pipeline/deer/sources/innerscene/deer-standing.glb` (hoof geometry for the deer) | "Deer standing" by **Innerscene**, [innerscene.com](https://www.innerscene.com/tools/library/3d-parts/deer-standing-35e2f5f6) | CC0 1.0 | not required |
@@ -75,3 +80,7 @@ added to this file in the same change. No assets with "non-commercial",
 "no derivatives" or "no redistribution" terms, nothing from Mixamo or store
 packs that forbid stand-alone redistribution, and no photos of real people.
 See [CONTRIBUTING.md](CONTRIBUTING.md#assets).
+
+---
+
+<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

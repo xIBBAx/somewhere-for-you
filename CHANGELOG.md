@@ -1,5 +1,7 @@
 # Changelog
 
+<p align="center"><img src="docs/media/scenes/lantern.webp" alt="Sky lanterns rising from a dark meadow at night" width="560" /></p>
+
 All notable changes to this project are listed here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow
 [Semantic Versioning](https://semver.org/).
@@ -40,3 +42,7 @@ All notable changes to this project are listed here. The format follows
   are size-limited and checked before use.
 - Debug tools exist only in development builds; the production build works
   under a strict Content Security Policy.
+
+---
+
+<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>

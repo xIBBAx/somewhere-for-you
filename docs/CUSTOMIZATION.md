@@ -1,5 +1,9 @@
 # Making the world your own
 
+<p align="center"><img src="media/scenes/personalize.webp" alt="The Personalize screen: typing a name and a letter, with a live preview" width="720" /><br/><em>The real Personalize screen, with fictional names</em></p>
+<p align="center"><img src="media/scenes/chai-stall.webp" alt="The chai stall with its CHAI sign and marigold torans" width="560" /><br/><em>The sign over the chai stall is one of the things you can change</em></p>
+<p align="center"><img src="media/scenes/rangoli-night.webp" alt="A rangoli ringed with lit diyas at night" width="560" /></p>
+
 There are two ways to personalize the world. Both change the same settings.
 
 | | In the browser | In `customize/` |
@@ -222,3 +226,7 @@ Personalize → **Your data**:
   again on the way in.
 - **Start the journey over** forgets progress but keeps the personalization.
 - **Delete everything personal** removes it all from this browser.
+
+---
+
+<sub>Somewhere, For You was created by <a href="https://github.com/xIBBAx">Ibrahim Sultan</a>.</sub>
